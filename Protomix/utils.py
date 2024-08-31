@@ -109,13 +109,22 @@ def get_fill_matrix(signals: np.ndarray, fill_type: str) -> np.ndarray:
 
 def shift_signals(signals: np.ndarray, shifts: np.ndarray, fill: Union[np.ndarray, str]) -> np.ndarray:
     """
-    Shifts all signals according to provided shifts
-    :param signals: m x n numpy.ndarray of m signals of n length
-    :param shifts: 1D npumpy.ndarray of length m containing each shift per signal - pos val shift to left
-    :param fill: fill values to use during signal shifting, defaults to numpy.nan, either provide a m x 2 numpy.ndarray
-                 with first col for left fill value, 2nd col for right fill value, or input str 'adjacent' to fill with
-                 copies of neighbouring values
-    :return: m x n numpy.ndarray of shifted signals
+    Shift all signals according to the provided shifts.
+
+    :param signals: A 2D numpy.ndarray of shape (m, n) where each row represents a signal of length n.
+    :type signals: np.ndarray
+    :param shifts: A 1D numpy.ndarray of length m containing the shift values for each signal.
+                   Positive values shift to the left.
+    :type shifts: np.ndarray
+    :param fill: Fill values to use during signal shifting. Defaults to numpy.nan.
+                Can be one of the following:
+                - A 2D numpy.ndarray of shape (m, 2), where the first column specifies the left fill values
+                and the second column specifies the right fill values.
+                - A string 'adjacent' to fill with copies of neighboring values.
+    :type fill: Union[np.ndarray, str]
+    
+    :return: A 2D numpy.ndarray of shape (m, n) containing the shifted signals.
+    :rtype: np.ndarray
     """
 
     # check inputs

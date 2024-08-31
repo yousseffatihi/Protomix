@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>protomix.Icoshift &mdash; Protomix 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Protomix
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.extract_fids">protomix.extract_fids module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.extract_params">protomix.extract_params module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.fourier_transform">protomix.fourier_transform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.group_delay_removal">protomix.group_delay_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.internal_referencing">protomix.internal_referencing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.negative_values_zeroing">protomix.negative_values_zeroing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.normalize">protomix.normalize module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.phase_correction">protomix.phase_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.plot">protomix.plot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.region_removal">protomix.region_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.setup">protomix.setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.solvent_residuals_removal">protomix.solvent_residuals_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Protomix</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">protomix.Icoshift</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for protomix.Icoshift</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">find_peaks</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">protomix.utils</span> <span class="kn">import</span> <span class="n">get_index_signal_with_highest_correlation</span><span class="p">,</span> <span class="n">get_avg2_target</span><span class="p">,</span> <span class="n">get_max_signal_idx</span><span class="p">,</span> \
+<span class="n">get_fill_matrix</span><span class="p">,</span> <span class="n">shift_signals</span><span class="p">,</span> <span class="n">ccfftshift</span>
+
+
+<span class="c1"># logging.basicConfig(level=logging.DEBUG)</span>
+
+<div class="viewcode-block" id="Icoshift"><a class="viewcode-back" href="../../protomix.html#protomix.Icoshift.Icoshift">[docs]</a><span class="k">class</span> <span class="nc">Icoshift</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loglvl</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loglvl_available</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;critical&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                                  <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                                  <span class="s1">&#39;warn&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+                                  <span class="s1">&#39;info&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                                  <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_loglvl</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(name)s</span><span class="s2"> -&gt; </span><span class="si">%(levelname)s</span><span class="s2">: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;average&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_used_signal_n_as_target</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n_signals</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n_intervals</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># list of tuple(start, end)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_split_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># list of points corresponding to the respective value in units for each datapoint</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unit_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;whole&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;adjacent&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;fast&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pre_align_globally</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_find_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_best_shift_find_increment</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fast_shift_find_increment</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_avg2factor</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_display_interval_borders</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># Warning: this is an experimental feature!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parallel_interval_processing</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_threads</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_min_peak_height_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.005</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_max_cluster_dist_factor</span> <span class="o">=</span> <span class="mf">0.02</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_offset_factor</span> <span class="o">=</span> <span class="mf">0.01</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_ignore_intervals_between_peak_cluster</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_pre_align</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_post_align</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_target</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode_switch</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;average&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_average</span><span class="p">,</span>
+                                    <span class="s1">&#39;median&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_median</span><span class="p">,</span>
+                                    <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_max</span><span class="p">,</span>
+                                    <span class="s1">&#39;average2&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_average2</span><span class="p">,</span>
+                                    <span class="s1">&#39;maxcorr&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_max_correlation</span><span class="p">,</span>
+                                    <span class="s1">&#39;user_defined&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_user_defined</span>
+                                    <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_align_modes_switch</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;whole&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_whole</span><span class="p">,</span>
+                                    <span class="s1">&#39;n_intervals&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_n_intervals</span><span class="p">,</span>
+                                    <span class="s1">&#39;fixed_interval_length&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_fixed_interval_length</span><span class="p">,</span>
+                                    <span class="s1">&#39;user_defined_intervals&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_user_defined_intervals</span><span class="p">,</span>
+                                    <span class="s1">&#39;shift_relative_to_region&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_relative_to_region</span><span class="p">,</span>
+                                    <span class="s1">&#39;auto_pick&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_intervals</span>
+                                    <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_modes_available</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nan&#39;</span><span class="p">,</span> <span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="s1">&#39;adjacent&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode_switch</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;manual&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_manual</span><span class="p">,</span>
+                                                  <span class="s1">&#39;best&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_best</span><span class="p">,</span>
+                                                  <span class="s1">&#39;fast&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_fast</span>
+                                                  <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_input_type_switch</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                                   <span class="s1">&#39;pts&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                                   <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                                   <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                                   <span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                   <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                   <span class="s1">&#39;ppm&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                   <span class="s1">&#39;0&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_flags</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="s1">&#39;avg2&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;no name&#39;</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;name has to be of type string&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">global_pre_align</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pre_align_globally</span>
+
+    <span class="nd">@global_pre_align</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">global_pre_align</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pre_align_globally</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;only bool allowed&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unit_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span>
+
+    <span class="nd">@unit_vector</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">unit_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Length of unit vector does not match sample length&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Dimension of unit vector is not 1&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unit vector has to be of type numpy.ndarray&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Provide sample vectors first&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signal_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span>
+
+    <span class="nd">@signal_names</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">signal_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;All sample signal_names have to be of type str&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Sample signal_names have to be provided as list of str&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">input_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Input all intervals in datapoints&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Input all intervals in units&#39;</span>
+
+    <span class="nd">@input_type</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">input_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_type_switch</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_type_switch</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid input value&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid input value&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span>
+
+    <span class="nd">@signals</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">signals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;overwriting existing signals and deleting target&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span> <span class="o">=</span> <span class="s1">&#39;average&#39;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span>
+                            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;sample length already set - you have most likely assigned a manual &#39;</span>
+                                            <span class="s1">&#39;target vector allready&#39;</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">==</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Target and sample vector length match - all good&#39;</span><span class="p">)</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_n_signals</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Target and sample vector length do not match&#39;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input sample vectors have to be of same length&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Each input sample vector has to be of dimension 1 and dtype must be child of &#39;</span>
+                                     <span class="s1">&#39;number&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input sample vectors have to be provided as numpy.ndarrays&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;sample length already set - you have most likely assigned a manual target vector &#39;</span>
+                                    <span class="s1">&#39;allready&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">==</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Target and sample vector length match - all good&#39;</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="n">value</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_n_signals</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Target and sample vector length do not match&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_n_signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Dimension of the numpy.ndarray inccorect or non-numeric&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input has to be a list of sample vectors as numpy.ndarray or 2 dimensional numpy.ndarray&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span>
+
+    <span class="nd">@inter</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">inter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
+                                 <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]]):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span>
+            <span class="n">allowed_types</span> <span class="o">=</span> <span class="nb">int</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">allowed_types</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Inputs in units set but no unit to data points map set&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="c1"># TODO: check for correct order of each start and stop</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">value</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span> <span class="o">=</span> <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_datapts</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_datapts</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">=</span> <span class="s1">&#39;user_defined_intervals&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;List of of intervals have to be of type: &#39;</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;List have to hold tuples of size 2&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">option</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">val</span><span class="p">)</span> <span class="ow">and</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;shift_relative_to_region&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span><span class="p">]</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span> <span class="o">=</span> <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_datapts</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_datapts</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">=</span> <span class="n">option</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for inter&#39;</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;n_intervals&#39;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_n_intervals</span> <span class="o">=</span> <span class="n">val</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">=</span> <span class="n">option</span>
+                    <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="s1">&#39;fixed_interval_length&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span> <span class="o">=</span> <span class="n">val</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_length_to_datapts</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">=</span> <span class="n">option</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for inter&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for inter&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Only accept tuples of size 2&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;whole&#39;</span><span class="p">,</span> <span class="s1">&#39;auto_pick&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for inter&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Input &quot;whole&quot; or provide custom intervals as list or tuple (option[str], ref interval &#39;</span>
+                             <span class="s1">&#39;as list[int/float] or no/length of intervals as int/float)&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">target</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_used_signal_n_as_target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">target_description</span> <span class="o">=</span> <span class="s1">&#39;mode &lt;</span><span class="si">%s</span><span class="s1">&gt; using sample </span><span class="si">%s</span><span class="s1"> as target&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_used_signal_n_as_target</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">target_description</span> <span class="o">=</span> <span class="s1">&#39;mode &lt;</span><span class="si">%s</span><span class="s1">&gt; using sample no </span><span class="si">%i</span><span class="s1"> as target&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_used_signal_n_as_target</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">target_description</span> <span class="o">=</span> <span class="s1">&#39;mode &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">target_description</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">target_description</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target</span>
+
+    <span class="nd">@target</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">str</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: overwriting existing target&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">==</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span> <span class="o">=</span> <span class="s1">&#39;user_defined&#39;</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span> <span class="o">=</span> <span class="s1">&#39;user_defined&#39;</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Length of target vector does not match sample vectors&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Target vector has more than 1 dimension&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode_switch</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for target&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Target has to be a 1-dimensional numpy array or option as string&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">avg2factor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_avg2factor</span>
+
+    <span class="nd">@avg2factor</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">avg2factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_avg2factor</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Factor for average2 target mode has to be &gt; 0&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Factor for average2 target mode has to be an integer &gt; 0&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">max_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction</span>
+
+    <span class="nd">@max_shift</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">max_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;manual&#39;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;For manual max shift input the value instead&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode_switch</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for max_shift&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span> <span class="ow">or</span> \
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inputs_in_datapoints</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span> <span class="o">=</span> <span class="s1">&#39;manual&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for max_shift, has to be an option as string or abs value&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fill_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span>
+
+    <span class="nd">@fill_mode</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fill_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_modes_available</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Error - invalid value for fill_mode, has to one of &#39;</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_modes_available</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">loglvl</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_loglvl</span><span class="p">)</span>
+
+    <span class="nd">@loglvl</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">loglvl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loglvl_available</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loglvl</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_loglvl</span> <span class="o">=</span> <span class="n">value</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_loglvl</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown log level&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;input has to be of type string&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Icoshift.run"><a class="viewcode-back" href="../../protomix.html#protomix.Icoshift.Icoshift.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Main function to run the actual icoshift process.</span>
+
+<span class="sd">        The steps involved are:</span>
+
+<span class="sd">        1. Pre-run coshift on the whole dataset:</span>
+<span class="sd">            - Co-shift or no co-shift.</span>
+<span class="sd">        2. Split the data into intervals.</span>
+<span class="sd">        3. Co-shift each interval.</span>
+<span class="sd">        4. Reconstruct the data from intervals.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">next_step</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pre_align_globally</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;pre-aligning whole signals&#39;</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Starting get targets for pre-align&#39;</span><span class="p">)</span>
+            <span class="n">next_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span><span class="p">)()</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Finished get targets for pre-align&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">next_step</span><span class="p">:</span>
+                <span class="n">next_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coshift</span><span class="p">(</span><span class="n">pre_align</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Something went wrong during pre-alignment&#39;</span><span class="p">)</span>
+            <span class="c1"># remove the target used during pre-alignment</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;pre-aligning whole signal done&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">next_step</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Starting splitting into intervals&#39;</span><span class="p">)</span>
+            <span class="n">next_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_signals</span><span class="p">()</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Finished splitting into intervals&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Something went wrong during pre-processing&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">next_step</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Starting get targets&#39;</span><span class="p">)</span>
+            <span class="n">next_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_mode_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target_mode</span><span class="p">)()</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Finished get targets&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Something went wrong during splitting into Intervals&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">next_step</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_coshift</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Icoshift.make_figures"><a class="viewcode-back" href="../../protomix.html#protomix.Icoshift.Icoshift.make_figures">[docs]</a>    <span class="k">def</span> <span class="nf">make_figures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fig_display_interval_borders</span><span class="p">:</span>
+            <span class="n">borders</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_list</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">borders</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_pre_align</span> <span class="o">=</span> <span class="n">plot_spectra</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">),</span>
+                                           <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span><span class="p">,</span>
+                                           <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span><span class="p">,</span>
+                                           <span class="n">interval_borders</span><span class="o">=</span><span class="n">borders</span><span class="p">,</span>
+                                           <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: All spectra prior shifting&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_post_align</span> <span class="o">=</span> <span class="n">plot_spectra</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span><span class="p">),</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">_signal_names</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span><span class="p">,</span>
+                                            <span class="n">interval_borders</span><span class="o">=</span><span class="n">borders</span><span class="p">,</span>
+                                            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: All spectra after shifting&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fig_target</span> <span class="o">=</span> <span class="n">plot_spectra</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                                        <span class="p">[</span><span class="s1">&#39;Target: &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                                        <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span><span class="p">,</span>
+                                        <span class="n">interval_borders</span><span class="o">=</span><span class="n">borders</span><span class="p">,</span>
+                                        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: Target used for shifting&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_find_and_apply_shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">):</span>
+        <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span><span class="p">)(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">shift_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">shifts</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">get_fill_matrix</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_coshift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pre_align</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;whole&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pre_align</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span><span class="p">):</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Target and signals intervals in place&#39;</span><span class="p">)</span>
+                    <span class="n">shifts</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="c1"># loop through all signals/target intervals</span>
+                    <span class="c1"># Test if it is really faster using parallel code - if self._use_threads is True code is executed</span>
+                    <span class="c1"># in parallel threads otherwise in processes</span>
+                    <span class="c1"># makes maybe only sense for &quot;best&quot; mode - threads seem to be a bit faster than processes, but if</span>
+                    <span class="c1"># using more threads/processes than cores available no speed up with numpy v1.17</span>
+                    <span class="c1"># CPU load definitely higher with processes, but the overhead from switching seems not worth it for</span>
+                    <span class="c1"># smaller data sets</span>
+                    <span class="c1"># So this feature is is &quot;experimental&quot;</span>
+                    <span class="c1"># TODO: add chunking into blocks of processes matching available cores</span>
+                    <span class="c1"># parallel processing does not make sense in case of just one reference interval</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parallel_interval_processing</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;shift_relative_to_region&#39;</span><span class="p">:</span>
+                        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_threads</span><span class="p">:</span>
+                            <span class="n">poolexecutor</span> <span class="o">=</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">poolexecutor</span> <span class="o">=</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">()</span>
+                        <span class="k">with</span> <span class="n">poolexecutor</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+                            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;starting parallel calculation of shifts&#39;</span><span class="p">)</span>
+                            <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                                    <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span><span class="p">)):</span>
+                                <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_threads</span><span class="p">:</span>
+                                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;starting a thread&#39;</span><span class="p">)</span>
+                                    <span class="k">else</span><span class="p">:</span>
+                                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;starting a process&#39;</span><span class="p">)</span>
+                                    <span class="n">future</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_find_and_apply_shift</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">)</span>
+                                    <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">future</span><span class="p">))</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                    <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">signals</span><span class="p">))</span>
+                            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;waiting for all threads/processes to finish&#39;</span><span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;all threads/processes finished - it took </span><span class="si">%s</span><span class="s1"> s - rebuilding signals now&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span>
+                            <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tasks</span><span class="p">):</span>
+                            <span class="c1"># item is a future obj in case i not in ignore list else its a signal interval</span>
+                            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span><span class="p">:</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;signals rebuild - it took </span><span class="si">%s</span><span class="s1"> s&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;starting sequential code execution&#39;</span><span class="p">)</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                                <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span><span class="p">)):</span>
+                            <span class="c1"># only calc shift if interval index is not on ignore list</span>
+                            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span><span class="p">:</span>
+                                <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span><span class="p">)(</span>
+                                    <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">)</span>
+                                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;found shifts with [shifts, scores, n]: &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">shifts</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span>
+                                              <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+                                <span class="c1"># only shift interval and add now if not reference region align</span>
+                                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;shift_relative_to_region&#39;</span><span class="p">:</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                                        <span class="n">shift_signals</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">shifts</span><span class="p">,</span>
+                                                      <span class="n">fill</span><span class="o">=</span><span class="n">get_fill_matrix</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span><span class="p">))</span>
+                                    <span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="c1"># add unshifted interval only if not reference region align</span>
+                                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;shift_relative_to_region&#39;</span><span class="p">:</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="s1">&#39;sequential and concatenating results finished - it took </span><span class="si">%s</span><span class="s1"> s&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;shift_relative_to_region&#39;</span><span class="p">:</span>
+                        <span class="c1"># concatenate to final np.ndarray</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals_in_intervals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1"># in case of reference shift use non interval signals and shift with shifts from above</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span> <span class="o">=</span> <span class="n">shift_signals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="n">shifts</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">get_fill_matrix</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span><span class="p">))</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;All intervals aligned&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Taget and signals intervals amount do not match&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Found signal intervals but no target intervals&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">==</span> <span class="s1">&#39;whole&#39;</span> <span class="ow">or</span> <span class="n">pre_align</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;whole signal align mode starting&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;shifted signals present - overwriting previous&#39;</span><span class="p">)</span>
+            <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span><span class="p">)(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;found shifts with [shifts, scores, n]: </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">shifts</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span> <span class="o">=</span> <span class="n">shift_signals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="n">shifts</span><span class="p">,</span>
+                                                  <span class="n">fill</span><span class="o">=</span><span class="n">get_fill_matrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span><span class="p">))</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;signals aligned&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;called _coshift with undefined behavior&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_run_global_align</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;shifted signals present - overwriting previous&#39;</span><span class="p">)</span>
+        <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">ccfftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shifted_signals</span> <span class="o">=</span> <span class="n">shift_signals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="n">shifts</span><span class="p">,</span>
+                                              <span class="n">fill</span><span class="o">=</span><span class="n">get_fill_matrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reconstruction_mode</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># Interval functions</span>
+
+    <span class="k">def</span> <span class="nf">_split_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;whole&#39;</span><span class="p">:</span>
+            <span class="n">split_list_generator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_modes_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_split_list</span> <span class="o">=</span> <span class="n">split_list_generator</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># target functions</span>
+
+    <span class="k">def</span> <span class="nf">_split_target</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span> <span class="o">!=</span> <span class="s1">&#39;whole&#39;</span><span class="p">:</span>
+            <span class="n">split_list_generator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_modes_switch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_align_mode</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">,</span> <span class="n">split_list_generator</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;target splitted into intervals&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_target_average</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using mean signal as target&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_split_target</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_target_median</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using median signal as target&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_split_target</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_target_max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># get the signal in the signals matrix with the highest signal and use this as reference</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">signal_interval</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">signal_interval</span><span class="p">[</span><span class="n">get_max_signal_idx</span><span class="p">(</span><span class="n">signal_interval</span><span class="p">),</span> <span class="p">:])</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using per interval max signal as target&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">[</span><span class="n">get_max_signal_idx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">),</span> <span class="p">:]</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using signal with highest overall signal intensity as target&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_target_average2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># in the original matlab implementation this seems to be calculated as:</span>
+        <span class="c1"># target = (mean(target) - min(mean(target)) * factor[default=3] for each interval separately</span>
+        <span class="c1"># why separately? -&gt; would only affect the &quot;baseline&quot; correction part min(mean(target)) this should not</span>
+        <span class="c1"># be to important if all input signals are baseline corrected and factor not unreasonably high</span>
+        <span class="c1"># nevertheless implemented as in matlab version</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">signal_interval</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signals_in_intervals</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_target_in_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_avg2_target</span><span class="p">(</span><span class="n">signal_interval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_avg2factor</span><span class="p">))</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using per interval average2 with a factor of </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_avg2factor</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">get_avg2_target</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_avg2factor</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using average2 of whole signal as target&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_target_max_correlation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># This is new and not in the original icoshift implementation</span>
+        <span class="c1"># calculate the correlation matrix for all signals and select the one that has the highest correlation with all</span>
+        <span class="n">idx</span><span class="p">,</span> <span class="n">signal</span> <span class="o">=</span> <span class="n">get_index_signal_with_highest_correlation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_used_signal_n_as_target</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;signal no. </span><span class="si">%i</span><span class="s1"> has the highest correlation with rest of signals - using it as target&#39;</span> <span class="o">%</span> <span class="n">idx</span><span class="p">)</span>
+        <span class="c1"># use that signal as target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="o">=</span> <span class="n">signal</span>
+        <span class="c1"># split target into intervals if needed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_split_target</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_target_user_defined</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;using user-defined target&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_split_target</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># align mode functions</span>
+
+    <span class="k">def</span> <span class="nf">_align_whole</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># jaja - whats the point ;)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">_align_n_intervals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_intervals</span>
+        <span class="n">n_size_plus_one</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_n_intervals</span>
+        <span class="k">if</span> <span class="n">n_size_plus_one</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">split_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">n_size_plus_one</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> \
+                         <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_size_plus_one</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">split_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">split_list</span>
+
+    <span class="k">def</span> <span class="nf">_align_fixed_interval_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># if last interval &lt; fixed_interval_length -&gt; merge last interval with rest</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span><span class="p">))[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fixed_interval_length</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_align_user_defined_intervals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">split_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">last_pos</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_intervals</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="n">last_pos</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">last_pos</span> <span class="o">=</span> <span class="n">start</span>
+            <span class="k">if</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span><span class="p">:</span>
+                <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">last_pos</span> <span class="o">=</span> <span class="n">stop</span>
+        <span class="k">if</span> <span class="n">last_pos</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">split_list</span>
+
+    <span class="k">def</span> <span class="nf">_align_relative_to_region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_user_defined_intervals</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_align_auto_pick_intervals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># This function is not implemented in original matlab version of icoshift</span>
+        <span class="c1"># picks intervals for alignment based on:</span>
+        <span class="c1"># peak-clusters found in the signal with the highest sum of correlation coef with other signals</span>
+        <span class="c1"># peak find uses a signal height cutoff off max signal * height_factor</span>
+        <span class="c1"># peaks belong to clusters if peak distance &lt; signal_length * cluster_dist_factor</span>
+        <span class="c1"># each cluster gets an offset = signal_length * offset_fact added left and right -&gt; intervals with peaks</span>
+        <span class="c1"># if ignore_intervals_between_peak_cluster == True only align peak cluster if False align all intervals</span>
+        <span class="c1"># TODO: still a bit experimental</span>
+        <span class="n">idx</span><span class="p">,</span> <span class="n">signal</span> <span class="o">=</span> <span class="n">get_index_signal_with_highest_correlation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signals</span><span class="p">)</span>
+        <span class="n">peaks</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span>
+                              <span class="n">prominence</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_min_peak_height_factor</span><span class="p">,</span>
+                              <span class="n">threshold</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_min_peak_height_factor</span> <span class="o">*</span> <span class="mf">0.04</span><span class="p">)</span>
+        <span class="c1">#                      height=int(np.max(signal) * self._align_auto_pick_min_peak_height_factor))</span>
+        <span class="n">non_adjacent</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">split_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ignore_intervals_no</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">last_peak</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">peak</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_offset_factor</span><span class="p">))</span>
+        <span class="n">in_cluster_max_dist</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signal_length</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_max_cluster_dist_factor</span><span class="p">))</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">non_adjacent</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">peak</span> <span class="ow">in</span> <span class="n">peaks</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">last_peak</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peak</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
+                    <span class="n">ignore_intervals_no</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">last_peak</span> <span class="o">=</span> <span class="n">peak</span>
+                <span class="k">if</span> <span class="n">peak</span> <span class="o">&gt;</span> <span class="n">last_peak</span> <span class="o">+</span> <span class="n">in_cluster_max_dist</span><span class="p">:</span>
+                    <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">last_peak</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">ignore_intervals_no</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peak</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
+                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">last_peak</span> <span class="o">=</span> <span class="n">peak</span>
+            <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peak</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">ignore_intervals_no</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_align_auto_pick_ignore_intervals_between_peak_cluster</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_intervals_no</span> <span class="o">=</span> <span class="n">ignore_intervals_no</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">peak</span> <span class="ow">in</span> <span class="n">peaks</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">last_peak</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peak</span><span class="o">-</span><span class="n">offset</span><span class="p">)</span>
+                    <span class="n">last_peak</span> <span class="o">=</span> <span class="n">peak</span>
+                <span class="k">if</span> <span class="n">peak</span> <span class="o">&gt;</span> <span class="n">last_peak</span> <span class="o">+</span> <span class="n">in_cluster_max_dist</span><span class="p">:</span>
+                    <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">last_peak</span><span class="o">+</span><span class="n">peak</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+                <span class="n">last_peak</span> <span class="o">=</span> <span class="n">peak</span>
+            <span class="n">split_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peak</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">split_list</span>
+
+    <span class="c1"># max shift correction functions</span>
+
+    <span class="k">def</span> <span class="nf">_max_shift_manual</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">):</span>
+        <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">ccfftshift</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span>
+                                    <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction</span>
+
+    <span class="k">def</span> <span class="nf">_max_shift_best</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_shift_loop</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_best_shift_find_increment</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_max_shift_fast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_shift_loop</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fast_shift_find_increment</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_find_shift_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">shift_increment</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">shifts</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_find_iterations</span><span class="p">):</span>
+            <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">ccfftshift</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span>
+                                        <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">shifts</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Found optimal max shift </span><span class="si">%i</span><span class="s1"> in iteration </span><span class="si">%i</span><span class="s1"> using mode </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_correction_mode</span><span class="p">))</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_shift_find_iterations</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Reached max interations but did not find optimal max shift&#39;</span><span class="p">)</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">shift_increment</span>
+        <span class="k">return</span> <span class="n">shifts</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">n</span>
+
+    <span class="k">def</span> <span class="nf">_convert_to_datapts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># returns the index of the datapoint closest to the input value</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span> <span class="o">-</span> <span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Could not convert </span><span class="si">%f</span><span class="s1"> exactly to datapoint - using closest datapoint&#39;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span> <span class="o">-</span> <span class="n">value</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_convert_length_to_datapts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unit_to_sample_point_map</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">factor</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Could not convert </span><span class="si">%f</span><span class="s1"> exactly to datapoints - round to closest datapoints&#39;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">factor</span> <span class="o">*</span> <span class="n">value</span><span class="p">))</span></div>
+
+
+
+
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zniber Mohammed.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

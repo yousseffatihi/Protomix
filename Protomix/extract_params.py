@@ -1,19 +1,19 @@
 import os
 import pandas as pd
 
-from Protomix import get_paths
+from protomix.utils import get_paths
 
 def extract_params(root_directory: str) -> pd.DataFrame:
     """
-    Extracts parameters from 'acqus' files located within a directory hierarchy.
-    
-    Parameters:
-    - root_directory (str): Root directory where the 'acqus' files are located.
-    
-    Returns:
-    - pd.DataFrame: A dataframe with extracted parameters, indexed by sample names.
+    Extract parameters from 'acqus' files located within a directory hierarchy.
+
+    :param root_directory: Root directory where the 'acqus' files are located.
+    :type root_directory: str
+
+    :return: A dataframe with extracted parameters, indexed by sample names.
+    :rtype: pd.DataFrame
     """
-    
+        
     # Check the type of root_directory
     assert isinstance(root_directory, str), "root_directory should be a string."
     

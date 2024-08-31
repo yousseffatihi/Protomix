@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>protomix.zero_filling &mdash; Protomix 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Protomix
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.extract_fids">protomix.extract_fids module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.extract_params">protomix.extract_params module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.fourier_transform">protomix.fourier_transform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.group_delay_removal">protomix.group_delay_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.internal_referencing">protomix.internal_referencing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.negative_values_zeroing">protomix.negative_values_zeroing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.normalize">protomix.normalize module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.phase_correction">protomix.phase_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.plot">protomix.plot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.region_removal">protomix.region_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.setup">protomix.setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.solvent_residuals_removal">protomix.solvent_residuals_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Protomix</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">protomix.zero_filling</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for protomix.zero_filling</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<div class="viewcode-block" id="zero_filling"><a class="viewcode-back" href="../../protomix.html#protomix.zero_filling.zero_filling">[docs]</a><span class="k">def</span> <span class="nf">zero_filling</span><span class="p">(</span><span class="n">fid_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">acqus_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">target_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Zero-fill or add zeros to the end of FID signals in a DataFrame to achieve the target number of points.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - fid_df (pd.DataFrame): DataFrame containing FID signals in rows.</span>
+<span class="sd">    - target_points (int): Target number of points.</span>
+<span class="sd">    - acqus_df (pd.DataFrame): DataFrame containing acquisition parameters.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - pd.DataFrame: DataFrame containing FID signals with zeros added to the end.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dwell_time</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">acqus_df</span><span class="p">[</span><span class="s1">&#39;$SW_h&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">current_points</span> <span class="o">=</span> <span class="n">fid_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">total_points</span> <span class="o">=</span> <span class="n">current_points</span> <span class="o">+</span> <span class="n">target_points</span>
+    <span class="n">time_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">dwell_time</span><span class="p">,</span> <span class="n">total_points</span> <span class="o">*</span> <span class="n">dwell_time</span><span class="p">,</span> <span class="n">total_points</span><span class="p">)</span>
+
+    <span class="c1"># Create a DataFrame of zeros with the new time values</span>
+    <span class="n">zero_fill_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">fid_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">time_values</span><span class="p">)</span>
+
+    <span class="c1"># Concatenate the original DataFrame with the zero-filled DataFrame</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">fid_df</span><span class="p">,</span> <span class="n">zero_fill_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result_df</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zniber Mohammed.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

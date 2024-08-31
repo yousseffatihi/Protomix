@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>protomix.internal_referencing &mdash; Protomix 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Protomix
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.extract_fids">protomix.extract_fids module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.extract_params">protomix.extract_params module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.fourier_transform">protomix.fourier_transform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.group_delay_removal">protomix.group_delay_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.internal_referencing">protomix.internal_referencing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.negative_values_zeroing">protomix.negative_values_zeroing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.normalize">protomix.normalize module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.phase_correction">protomix.phase_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.plot">protomix.plot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.region_removal">protomix.region_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.setup">protomix.setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.solvent_residuals_removal">protomix.solvent_residuals_removal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Protomix</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">protomix.internal_referencing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for protomix.internal_referencing</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<div class="viewcode-block" id="internal_referencing"><a class="viewcode-back" href="../../protomix.html#protomix.internal_referencing.internal_referencing">[docs]</a><span class="k">def</span> <span class="nf">internal_referencing</span><span class="p">(</span><span class="n">spectra_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ppm_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">ppm_max</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reference a DataFrame of NMR spectra_df by shifting the spectrum values to set the TSP peak to 0 ppm.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - spectra_df (DataFrame): DataFrame where each row is a complex NMR spectrum and columns are ppm values.</span>
+<span class="sd">    - ppm_min (float, optional): The minimum ppm value for the search range. Default is -0.2.</span>
+<span class="sd">    - ppm_max (float, optional): The maximum ppm value for the search range. Default is 0.2.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - DataFrame: The shifted spectra_df with original ppm values as column names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">apply_internal_referencing</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">ppm</span><span class="p">,</span> <span class="n">ppm_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">ppm_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reference a single NMR spectrum by shifting the spectrum values to set the TSP peak to 0 ppm.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - spectrum (numpy array): The intensity values of the spectrum.</span>
+<span class="sd">        - ppm (numpy array): The chemical shift values corresponding to the spectrum.</span>
+<span class="sd">        - ppm_min (float, optional): The minimum ppm value for the search range. Default is -0.2.</span>
+<span class="sd">        - ppm_max (float, optional): The maximum ppm value for the search range. Default is 0.2.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - tuple: The shifted spectrum and the original chemical shifts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+        <span class="c1"># Select the data within the specified ppm range</span>
+        <span class="n">search</span> <span class="o">=</span> <span class="p">(</span><span class="n">ppm</span> <span class="o">&gt;=</span> <span class="n">ppm_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ppm</span> <span class="o">&lt;=</span> <span class="n">ppm_max</span><span class="p">)</span>
+        <span class="n">spectrum_search</span> <span class="o">=</span> <span class="n">spectrum</span><span class="p">[</span><span class="n">search</span><span class="p">]</span>
+
+        <span class="c1"># Determine the TSP peak intensity within the ppm range</span>
+        <span class="n">reference_intensity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">spectrum_search</span><span class="p">)</span>
+    
+        <span class="c1"># Find the index of that intensity in the full spectrum</span>
+        <span class="n">reference_idx_full_spectrum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">spectrum</span> <span class="o">==</span> <span class="n">reference_intensity</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Determine the index in the original ppm array where ppm is closest to 0</span>
+        <span class="n">target_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ppm</span><span class="p">)</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+    
+        <span class="c1"># Calculate the number of positions to shift the spectrum values</span>
+        <span class="n">shift_positions</span> <span class="o">=</span> <span class="n">target_idx</span> <span class="o">-</span> <span class="n">reference_idx_full_spectrum</span>
+
+        <span class="c1"># Shift the spectrum values</span>
+        <span class="n">spectrum_shifted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">shift_positions</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">spectrum_shifted</span><span class="p">,</span> <span class="n">ppm</span>
+    
+    <span class="c1"># Extract ppm values from column names</span>
+    <span class="n">ppm</span> <span class="o">=</span> <span class="n">spectra_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+    
+    <span class="c1"># Initialize an empty DataFrame to store the results</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">spectra_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">spectra_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="c1"># Take the real part of the complex spectrum</span>
+        <span class="n">spectrum_real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        
+        <span class="c1"># Reference the spectrum using the internal standard</span>
+        <span class="n">spectrum_shifted</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">apply_internal_referencing</span><span class="p">(</span><span class="n">spectrum_real</span><span class="p">,</span> <span class="n">ppm</span><span class="p">,</span> <span class="n">ppm_min</span><span class="p">,</span> <span class="n">ppm_max</span><span class="p">)</span>
+        
+        <span class="c1"># Append the shifted spectrum to the result DataFrame</span>
+        <span class="n">result_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">spectrum_shifted</span>
+    
+    <span class="k">return</span> <span class="n">result_df</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Zniber Mohammed.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

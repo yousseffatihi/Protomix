@@ -5,7 +5,7 @@ import concurrent.futures
 import numpy as np
 import logging
 
-from Protomix import get_index_signal_with_highest_correlation, get_avg2_target, get_max_signal_idx, \
+from protomix.utils import get_index_signal_with_highest_correlation, get_avg2_target, get_max_signal_idx, \
 get_fill_matrix, shift_signals, ccfftshift
 
 
@@ -403,12 +403,15 @@ class Icoshift:
 
     def run(self):
         """
-        Main function to run the actual icoshift
-        1 - pre run coshift whole dataset?
-          - co shift / no co shift
-        2 - split into intervals
-        3 - co shift each interval
-        4 - reconstruct from intervals
+        Main function to run the actual icoshift process.
+
+        The steps involved are:
+
+        1. Pre-run coshift on the whole dataset:
+            - Co-shift or no co-shift.
+        2. Split the data into intervals.
+        3. Co-shift each interval.
+        4. Reconstruct the data from intervals.
         """
 
         next_step = True

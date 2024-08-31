@@ -4,26 +4,27 @@ import pandas as pd
 
 def extract_fids(root_directory: str, acqus_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Extracts Free Induction Decay (FID) data from binary files and constructs a DataFrame.
+    Extract Free Induction Decay (FID) data from binary files and construct a DataFrame.
 
     This function navigates through a specified directory, locates binary files named 'fid',
     and extracts FID data from them. It then assembles a DataFrame where each row represents
     the complex FID signal from a sample, with columns corresponding to time points calculated
-    using the dwell time from the acqus_df DataFrame.
+    using the dwell time from the `acqus_df` DataFrame.
 
-    Parameters:
-    - root_directory (str): The root directory path containing subdirectories with 'fid' files.
-    - acqus_df (pd.DataFrame): A DataFrame containing acquisition parameters, specifically the 
-      spectral width ('$SW_h') used for dwell time calculation.
+    :param root_directory: The root directory path containing subdirectories with 'fid' files.
+    :type root_directory: str
+    :param acqus_df: A DataFrame containing acquisition parameters, specifically the 
+        spectral width ('$SW_h') used for dwell time calculation.
+    :type acqus_df: pd.DataFrame
 
-    Returns:
-    - pd.DataFrame: A DataFrame where each row corresponds to a sample's FID data (as complex values),
-      with columns representing time points.
+    :return: A DataFrame where each row corresponds to a sample's FID data (as complex values),
+        with columns representing time points.
+    :rtype: pd.DataFrame
 
-    Raises:
-    - AssertionError: If root_directory is not a string, does not exist, is not a directory, 
-      contains no 'fid' files, or if any 'fid' file has an unexpected data length.
+    :raises AssertionError: If `root_directory` is not a string, does not exist, is not a directory, 
+        contains no 'fid' files, or if any 'fid' file has an unexpected data length.
     """
+
     # Check the type of root_directory
     assert isinstance(root_directory, str), "root_directory should be a string."
     
