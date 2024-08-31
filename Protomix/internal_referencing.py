@@ -3,15 +3,19 @@ import pandas as pd
 
 def internal_referencing(spectra_df: pd.DataFrame, ppm_min: float = -0.2, ppm_max: float = 0.2) -> pd.DataFrame:
     """
-    Reference a DataFrame of NMR spectra_df by shifting the spectrum values to set the TSP peak to 0 ppm.
+    Reference a DataFrame of NMR spectra by shifting the spectrum values to align the TSP peak to 0 ppm.
+
+    This function adjusts the chemical shift values in the provided NMR spectra so that the TSP (trimethylsilyl propionate) peak is set to 0 ppm. The adjustment is performed within a specified ppm range.
+
+    :param spectra_df: A DataFrame where each row represents a complex NMR spectrum, and columns correspond to ppm (parts per million) values.
+    :type spectra_df: pd.DataFrame
+    :param ppm_min: The minimum ppm value for the search range to locate the TSP peak. Default is -0.2.
+    :type ppm_min: float, optional
+    :param ppm_max: The maximum ppm value for the search range to locate the TSP peak. Default is 0.2.
+    :type ppm_max: float, optional
     
-    Parameters:
-    - spectra_df (DataFrame): DataFrame where each row is a complex NMR spectrum and columns are ppm values.
-    - ppm_min (float, optional): The minimum ppm value for the search range. Default is -0.2.
-    - ppm_max (float, optional): The maximum ppm value for the search range. Default is 0.2.
-    
-    Returns:
-    - DataFrame: The shifted spectra_df with original ppm values as column names.
+    :return: A DataFrame with spectra shifted so that the TSP peak is aligned at 0 ppm, with the original ppm values as column names.
+    :rtype: pd.DataFrame
     """
     
     def apply_internal_referencing(spectrum, ppm, ppm_min=-0.2, ppm_max=0.2):

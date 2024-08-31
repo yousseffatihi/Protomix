@@ -3,16 +3,20 @@ import pandas as pd
 
 from scipy.optimize import minimize_scalar
 
-def phase_correction(spectra_df):
+def phase_correction(spectra_df: pd.DataFrame) -> pd.DataFrame:
     """
     Apply phase correction to spectra in a DataFrame.
 
-    Args:
-        spectra_df (pd.DataFrame): DataFrame containing spectra as rows and ppm values as columns.
+    This function applies a phase correction to each spectrum in the provided DataFrame, ensuring that the
+    spectral peaks are properly aligned.
 
-    Returns:
-        pd.DataFrame: DataFrame containing phase-corrected spectra.
+    :param spectra_df: A DataFrame containing spectra, with each row representing a spectrum and columns corresponding to ppm values.
+    :type spectra_df: pd.DataFrame
+    
+    :return: A DataFrame containing the phase-corrected spectra.
+    :rtype: pd.DataFrame
     """
+
     ppm = spectra_df.columns.values
 
     def rms(ang, y):

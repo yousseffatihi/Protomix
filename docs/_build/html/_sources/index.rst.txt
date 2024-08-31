@@ -6,17 +6,17 @@
 Installation Guide
 ==================
 
-At the command line
+to install protomix on google colab
 
 ::
 
-    easy_install crawler
+    !pip install protomix
 
 Or, if you have pip installed
 
 ::
 
-    pip install crawler
+    pip install protomix
 
 Welcome to Protomix's documentation!
 ====================================

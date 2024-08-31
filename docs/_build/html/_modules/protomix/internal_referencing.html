@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -99,15 +98,19 @@
 
 <div class="viewcode-block" id="internal_referencing"><a class="viewcode-back" href="../../protomix.html#protomix.internal_referencing.internal_referencing">[docs]</a><span class="k">def</span> <span class="nf">internal_referencing</span><span class="p">(</span><span class="n">spectra_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ppm_min</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">ppm_max</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reference a DataFrame of NMR spectra_df by shifting the spectrum values to set the TSP peak to 0 ppm.</span>
+<span class="sd">    Reference a DataFrame of NMR spectra by shifting the spectrum values to align the TSP peak to 0 ppm.</span>
+
+<span class="sd">    This function adjusts the chemical shift values in the provided NMR spectra so that the TSP (trimethylsilyl propionate) peak is set to 0 ppm. The adjustment is performed within a specified ppm range.</span>
+
+<span class="sd">    :param spectra_df: A DataFrame where each row represents a complex NMR spectrum, and columns correspond to ppm (parts per million) values.</span>
+<span class="sd">    :type spectra_df: pd.DataFrame</span>
+<span class="sd">    :param ppm_min: The minimum ppm value for the search range to locate the TSP peak. Default is -0.2.</span>
+<span class="sd">    :type ppm_min: float, optional</span>
+<span class="sd">    :param ppm_max: The maximum ppm value for the search range to locate the TSP peak. Default is 0.2.</span>
+<span class="sd">    :type ppm_max: float, optional</span>
 <span class="sd">    </span>
-<span class="sd">    Parameters:</span>
-<span class="sd">    - spectra_df (DataFrame): DataFrame where each row is a complex NMR spectrum and columns are ppm values.</span>
-<span class="sd">    - ppm_min (float, optional): The minimum ppm value for the search range. Default is -0.2.</span>
-<span class="sd">    - ppm_max (float, optional): The maximum ppm value for the search range. Default is 0.2.</span>
-<span class="sd">    </span>
-<span class="sd">    Returns:</span>
-<span class="sd">    - DataFrame: The shifted spectra_df with original ppm values as column names.</span>
+<span class="sd">    :return: A DataFrame with spectra shifted so that the TSP peak is aligned at 0 ppm, with the original ppm values as column names.</span>
+<span class="sd">    :rtype: pd.DataFrame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">def</span> <span class="nf">apply_internal_referencing</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span> <span class="n">ppm</span><span class="p">,</span> <span class="n">ppm_min</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">ppm_max</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>

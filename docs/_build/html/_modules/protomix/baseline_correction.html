@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -135,7 +134,7 @@
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">corrected_spectra_df</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="als"><a class="viewcode-back" href="../../protomix.html#protomix.baseline_correction.als">[docs]</a><span class="k">def</span> <span class="nf">als</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lambda_</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">maxIter</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">als</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lambda_</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">maxIter</span><span class="p">):</span>
     <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="n">D</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;csc&#39;</span><span class="p">)</span>
     <span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">D</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># numpy.diff( ,2) does not work with sparse matrix. This is a workaround.</span>
@@ -147,9 +146,9 @@
         <span class="n">Z</span> <span class="o">=</span> <span class="n">W</span> <span class="o">+</span> <span class="n">lambda_</span> <span class="o">*</span> <span class="n">D</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">spsolve</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">w</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">z</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">z</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span></div>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span>
 
-<div class="viewcode-block" id="arpls"><a class="viewcode-back" href="../../protomix.html#protomix.baseline_correction.arpls">[docs]</a><span class="k">def</span> <span class="nf">arpls</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">itermax</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">arpls</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">itermax</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="c1"># D = sparse.csc_matrix(np.diff(np.eye(N), 2))</span>
     <span class="n">D</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;csc&#39;</span><span class="p">)</span>
@@ -171,10 +170,10 @@
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="n">wt</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ratio</span><span class="p">:</span>
             <span class="k">break</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">wt</span>
-    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span></div>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span>
 
 
-<div class="viewcode-block" id="WhittakerSmooth"><a class="viewcode-back" href="../../protomix.html#protomix.baseline_correction.WhittakerSmooth">[docs]</a><span class="k">def</span> <span class="nf">WhittakerSmooth</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">differences</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">WhittakerSmooth</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">differences</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">size</span>
     <span class="c1"># D = csc_matrix(np.diff(np.eye(m), differences))</span>
@@ -185,9 +184,9 @@
     <span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csc_matrix</span><span class="p">(</span><span class="n">W</span> <span class="o">+</span> <span class="p">(</span><span class="n">lam</span> <span class="o">*</span> <span class="n">D</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">D</span><span class="p">))</span>
     <span class="n">B</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csc_matrix</span><span class="p">(</span><span class="n">W</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
     <span class="n">background</span> <span class="o">=</span> <span class="n">spsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">background</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
 
-<div class="viewcode-block" id="airpls"><a class="viewcode-back" href="../../protomix.html#protomix.baseline_correction.airpls">[docs]</a><span class="k">def</span> <span class="nf">airpls</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lambda_</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">porder</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">airpls</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lambda_</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">porder</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxIter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -203,7 +202,7 @@
         <span class="n">w</span><span class="p">[</span><span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">dssn</span><span class="p">)</span>
         <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="n">dssn</span><span class="p">)</span>
         <span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">z</span></div>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">z</span>
 </pre></div>
 
            </div>

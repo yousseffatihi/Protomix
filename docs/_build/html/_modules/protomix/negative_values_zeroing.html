@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -99,12 +98,15 @@
 <div class="viewcode-block" id="negative_values_zeroing"><a class="viewcode-back" href="../../protomix.html#protomix.negative_values_zeroing.negative_values_zeroing">[docs]</a><span class="k">def</span> <span class="nf">negative_values_zeroing</span><span class="p">(</span><span class="n">spectra_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set all negative values in the spectra to zero.</span>
+
+<span class="sd">    This function processes a DataFrame of spectra, setting any negative values to zero while retaining</span>
+<span class="sd">    the original structure and indexes of the DataFrame.</span>
+
+<span class="sd">    :param spectra_df: A DataFrame where each row represents a spectrum, and columns correspond to spectral data points.</span>
+<span class="sd">    :type spectra_df: pd.DataFrame</span>
 <span class="sd">    </span>
-<span class="sd">    Parameters:</span>
-<span class="sd">    - spectra (pd.DataFrame): DataFrame where each row is a spectrum.</span>
-<span class="sd">    </span>
-<span class="sd">    Returns:</span>
-<span class="sd">    - pd.DataFrame: Spectra with negative values set to zero, retaining original indexes.</span>
+<span class="sd">    :return: A DataFrame with the same structure as the input, but with all negative values replaced by zero.</span>
+<span class="sd">    :rtype: pd.DataFrame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="c1"># Apply the zeroing operation to each row in the DataFrame</span>

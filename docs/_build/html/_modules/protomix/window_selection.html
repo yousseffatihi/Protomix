@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -98,15 +97,20 @@
 
 <div class="viewcode-block" id="window_selection"><a class="viewcode-back" href="../../protomix.html#protomix.window_selection.window_selection">[docs]</a><span class="k">def</span> <span class="nf">window_selection</span><span class="p">(</span><span class="n">spectra_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Extract a specified ppm range from the spectra_df DataFrame.</span>
+<span class="sd">    Extract a specified ppm range from the `spectra_df` DataFrame.</span>
+
+<span class="sd">    This function extracts the spectral data within a specified ppm range from each spectrum in the DataFrame.</span>
+<span class="sd">    The resulting DataFrame retains the original indexes but only includes the selected ppm range.</span>
+
+<span class="sd">    :param spectra_df: A DataFrame where each row represents a spectrum and columns correspond to ppm values.</span>
+<span class="sd">    :type spectra_df: pd.DataFrame</span>
+<span class="sd">    :param range: A tuple specifying the start and end ppm values of the region to extract. Default is (0.2, 10).</span>
+<span class="sd">    :type range: tuple</span>
 <span class="sd">    </span>
-<span class="sd">    Parameters:</span>
-<span class="sd">    - spectra_df (pd.DataFrame): DataFrame where each row is a spectrum and columns are ppm values.</span>
-<span class="sd">    - range (tuple): Start and end ppm values of the region to extract.</span>
-<span class="sd">    </span>
-<span class="sd">    Returns:</span>
-<span class="sd">    - pd.DataFrame: Extracted spectra_df with the specified ppm range, retaining original indexes.</span>
+<span class="sd">    :return: A DataFrame containing only the spectral data within the specified ppm range, retaining the original indexes.</span>
+<span class="sd">    :rtype: pd.DataFrame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    
     <span class="n">start_ppm</span><span class="p">,</span> <span class="n">end_ppm</span> <span class="o">=</span> <span class="nb">range</span>
     
     <span class="c1"># Extract the columns (ppm values) within the specified range</span>

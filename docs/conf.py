@@ -69,5 +69,5 @@ html_theme_options = {
     'navigation_depth': 4,  # Adjust this based on your ToC depth
 }
 
-# add_module_names = False
+add_module_names = False
 # master_doc = 'install'

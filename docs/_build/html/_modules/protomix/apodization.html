@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -97,23 +96,31 @@
 <span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<div class="viewcode-block" id="apodization"><a class="viewcode-back" href="../../protomix.html#protomix.apodization.apodization">[docs]</a><span class="k">def</span> <span class="nf">apodization</span><span class="p">(</span><span class="n">fid_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="p">,</span> <span class="n">LB</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">apodization_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;gaussian&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<div class="viewcode-block" id="apodization"><a class="viewcode-back" href="../../protomix.html#protomix.apodization.apodization">[docs]</a><span class="k">def</span> <span class="nf">apodization</span><span class="p">(</span><span class="n">fid_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">LB</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">apodization_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;gaussian&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Applies an apodization function to each Free Induction Decay (FID) row in a DataFrame.</span>
+<span class="sd">    Apply an apodization function to each Free Induction Decay (FID) row in a DataFrame.</span>
 
-<span class="sd">    Apodization, in the context of NMR (Nuclear Magnetic Resonance) spectroscopy, is a windowing technique applied to FID signals to enhance signal-to-noise ratio and line shape in the frequency domain. This function supports two types of apodization: Gaussian and Exponential.</span>
+<span class="sd">    Apodization, in the context of NMR (Nuclear Magnetic Resonance) spectroscopy, is a windowing technique applied </span>
+<span class="sd">    to FID signals to enhance the signal-to-noise ratio and improve line shape in the frequency domain. </span>
+<span class="sd">    This function supports two types of apodization: Gaussian and Exponential.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    - fid_df (pd.DataFrame): A DataFrame where each row represents an FID signal and columns represent time points.</span>
-<span class="sd">    - LB (float, optional): Line broadening parameter, which determines the width of the apodization function. A higher value results in more broadening. Defaults to 1.</span>
-<span class="sd">    - apodization_type (str, optional): Type of apodization function to apply. Options are &#39;gaussian&#39; for Gaussian apodization, and &#39;exponential&#39; for Exponential apodization. Defaults to &#39;gaussian&#39;.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">    - pd.DataFrame: A DataFrame of the same shape as fid_df, containing the apodized FID values. Each FID row in the input DataFrame is multiplied by the apodization function, transforming the data in the time domain.</span>
-
-<span class="sd">    Raises:</span>
-<span class="sd">    - AssertionError: If fid_df is not a pandas DataFrame, LB is negative, or apodization_type is not &#39;gaussian&#39; or &#39;exponential&#39;.</span>
+<span class="sd">    :param fid_df: A DataFrame where each row represents an FID signal, and columns represent time points.</span>
+<span class="sd">    :type fid_df: pd.DataFrame</span>
+<span class="sd">    :param LB: Line broadening parameter, which determines the width of the apodization function. </span>
+<span class="sd">               A higher value results in more broadening. Defaults to 1.</span>
+<span class="sd">    :type LB: float, optional</span>
+<span class="sd">    :param apodization_type: Type of apodization function to apply. Options are &#39;gaussian&#39; for Gaussian apodization, </span>
+<span class="sd">                             and &#39;exponential&#39; for Exponential apodization. Defaults to &#39;gaussian&#39;.</span>
+<span class="sd">    :type apodization_type: str, optional</span>
+<span class="sd">    </span>
+<span class="sd">    :return: A DataFrame of the same shape as `fid_df`, containing the apodized FID values. Each FID row in the input </span>
+<span class="sd">             DataFrame is multiplied by the apodization function, transforming the data in the time domain.</span>
+<span class="sd">    :rtype: pd.DataFrame</span>
+<span class="sd">    </span>
+<span class="sd">    :raises AssertionError: If `fid_df` is not a pandas DataFrame, `LB` is negative, or `apodization_type` is not </span>
+<span class="sd">                            &#39;gaussian&#39; or &#39;exponential&#39;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1"># Assertive lines</span>
     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fid_df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">),</span> <span class="s2">&quot;fid_df should be a pandas DataFrame.&quot;</span>
     <span class="k">assert</span> <span class="n">LB</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;LB should be non-negative.&quot;</span>

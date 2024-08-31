@@ -1,11 +1,11 @@
 protomix package
 ================
 
-protomix.Icoshift module
+protomix.Icoshift class
 ------------------------
 
-.. automodule:: protomix.Icoshift
-   :members:
+.. autoclass:: protomix.Icoshift.Icoshift
+   :members: run
    :undoc-members:
    :show-inheritance:
 
@@ -21,7 +21,7 @@ protomix.baseline\_correction module
 ------------------------------------
 
 .. automodule:: protomix.baseline_correction
-   :members:
+   :members: baseline_correction
    :undoc-members:
    :show-inheritance:
 
@@ -134,6 +134,7 @@ protomix.utils module
 
 .. automodule:: protomix.utils
    :members:
+   :exclude-members: get_avg2_target, get_index_signal_with_highest_correlation, get_max_signal_idx, interpolate_nan
    :undoc-members:
    :show-inheritance:
 
@@ -149,14 +150,6 @@ protomix.zero\_filling module
 -----------------------------
 
 .. automodule:: protomix.zero_filling
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: protomix
    :members:
    :undoc-members:
    :show-inheritance:

@@ -47,7 +47,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation Guide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#protomix-icoshift-class">protomix.Icoshift class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-protomix.binning">protomix.binning module</a></li>
@@ -66,7 +66,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -97,62 +96,54 @@
              
   <section id="protomix-package">
 <h1>protomix package<a class="headerlink" href="#protomix-package" title="Permalink to this heading">¶</a></h1>
-<section id="module-protomix.Icoshift">
-<span id="protomix-icoshift-module"></span><h2>protomix.Icoshift module<a class="headerlink" href="#module-protomix.Icoshift" title="Permalink to this heading">¶</a></h2>
+<section id="protomix-icoshift-class">
+<h2>protomix.Icoshift class<a class="headerlink" href="#protomix-icoshift-class" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="protomix.Icoshift.Icoshift">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">protomix.Icoshift.</span></span><span class="sig-name descname"><span class="pre">Icoshift</span></span><a class="reference internal" href="_modules/protomix/Icoshift.html#Icoshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.Icoshift.Icoshift" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Icoshift</span></span><a class="reference internal" href="_modules/protomix/Icoshift.html#Icoshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.Icoshift.Icoshift" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.avg2factor">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">avg2factor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.avg2factor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.fill_mode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill_mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.fill_mode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.global_pre_align">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">global_pre_align</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.global_pre_align" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.input_type">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.input_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.inter">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.inter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.loglvl">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loglvl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.loglvl" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.make_figures">
-<span class="sig-name descname"><span class="pre">make_figures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/Icoshift.html#Icoshift.make_figures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.Icoshift.Icoshift.make_figures" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.max_shift">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_shift</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.max_shift" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.result">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">result</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.result" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>A class to perform Icoshift alignment on spectral data.</p>
+<p>The Icoshift algorithm aligns signals (e.g., NMR spectra) to a reference signal by shifting them
+to maximize the correlation with the reference. The alignment can be performed on the entire signal
+or in defined intervals. The class supports various modes for determining the reference signal, 
+alignment modes, and shift correction strategies.</p>
+<dl>
+<dt>Properties:</dt><dd><p>name (str): The name of the Icoshift instance.
+global_pre_align (bool): Flag to enable or disable global pre-alignment.
+unit_vector (np.ndarray): Vector mapping units to sample points.
+signal_names (List[str]): List of names corresponding to the signals.
+input_type (str): Type of input (datapoints or units).
+result (np.ndarray): The aligned signals after running Icoshift.
+signals (np.ndarray): The input signals to be aligned.
+inter (List[Tuple[Union[int, float], Union[int, float]]]): User-defined intervals for alignment.
+target (Tuple[str, Union[np.ndarray, list]]): The target signal used for alignment.
+avg2factor (int): Factor used in the ‘average2’ target mode.
+max_shift (Tuple[str, int]): Maximum shift correction mode and value.
+fill_mode (str): Mode used to fill missing data after shifting (‘nan’, ‘zero’, ‘adjacent’).
+loglvl (str): Logging level for debugging and information.</p>
+</dd>
+<dt>Methods:</dt><dd><dl class="simple">
+<dt>run(): Executes the Icoshift alignment process.</dt><dd><dl class="simple">
+<dt>The <cite>run</cite> method performs the main alignment process using the following steps:</dt><dd><ol class="arabic simple">
+<li><p>Optionally performs a global pre-alignment of the entire dataset.</p></li>
+<li><p>Splits the signals into intervals based on the selected alignment mode.</p></li>
+<li><p>Calculates the target signal based on the chosen target mode.</p></li>
+<li><p>Aligns the signals within each interval to the target signal.</p></li>
+<li><p>Reconstructs the aligned signals from the intervals.</p></li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Example:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">icoshift</span> <span class="o">=</span> <span class="n">Icoshift</span><span class="p">()</span>
+<span class="n">icoshift</span><span class="o">.</span><span class="n">signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">...</span><span class="p">])</span>  <span class="c1"># Assign your spectral data here</span>
+<span class="n">icoshift</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">aligned_signals</span> <span class="o">=</span> <span class="n">icoshift</span><span class="o">.</span><span class="n">result</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/Icoshift.html#Icoshift.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.Icoshift.Icoshift.run" title="Permalink to this definition">¶</a></dt>
@@ -172,26 +163,6 @@
 </ol>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.signal_names">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signal_names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.signal_names" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.signals">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.signals" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.target">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">target</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.target" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="protomix.Icoshift.Icoshift.unit_vector">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unit_vector</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#protomix.Icoshift.Icoshift.unit_vector" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 </section>
@@ -199,45 +170,41 @@
 <span id="protomix-apodization-module"></span><h2>protomix.apodization module<a class="headerlink" href="#module-protomix.apodization" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.apodization.apodization">
-<span class="sig-prename descclassname"><span class="pre">protomix.apodization.</span></span><span class="sig-name descname"><span class="pre">apodization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LB</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apodization_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gaussian'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/apodization.html#apodization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.apodization.apodization" title="Permalink to this definition">¶</a></dt>
-<dd><p>Applies an apodization function to each Free Induction Decay (FID) row in a DataFrame.</p>
-<p>Apodization, in the context of NMR (Nuclear Magnetic Resonance) spectroscopy, is a windowing technique applied to FID signals to enhance signal-to-noise ratio and line shape in the frequency domain. This function supports two types of apodization: Gaussian and Exponential.</p>
-<p>Parameters:
-- fid_df (pd.DataFrame): A DataFrame where each row represents an FID signal and columns represent time points.
-- LB (float, optional): Line broadening parameter, which determines the width of the apodization function. A higher value results in more broadening. Defaults to 1.
-- apodization_type (str, optional): Type of apodization function to apply. Options are ‘gaussian’ for Gaussian apodization, and ‘exponential’ for Exponential apodization. Defaults to ‘gaussian’.</p>
-<p>Returns:
-- pd.DataFrame: A DataFrame of the same shape as fid_df, containing the apodized FID values. Each FID row in the input DataFrame is multiplied by the apodization function, transforming the data in the time domain.</p>
-<p>Raises:
-- AssertionError: If fid_df is not a pandas DataFrame, LB is negative, or apodization_type is not ‘gaussian’ or ‘exponential’.</p>
+<span class="sig-name descname"><span class="pre">apodization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LB</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apodization_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'gaussian'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/apodization.html#apodization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.apodization.apodization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply an apodization function to each Free Induction Decay (FID) row in a DataFrame.</p>
+<p>Apodization, in the context of NMR (Nuclear Magnetic Resonance) spectroscopy, is a windowing technique applied 
+to FID signals to enhance the signal-to-noise ratio and improve line shape in the frequency domain. 
+This function supports two types of apodization: Gaussian and Exponential.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents an FID signal, and columns represent time points.</p></li>
+<li><p><strong>LB</strong> (<em>float</em><em>, </em><em>optional</em>) – Line broadening parameter, which determines the width of the apodization function. 
+A higher value results in more broadening. Defaults to 1.</p></li>
+<li><p><strong>apodization_type</strong> (<em>str</em><em>, </em><em>optional</em>) – Type of apodization function to apply. Options are ‘gaussian’ for Gaussian apodization, 
+and ‘exponential’ for Exponential apodization. Defaults to ‘gaussian’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame of the same shape as <cite>fid_df</cite>, containing the apodized FID values. Each FID row in the input 
+DataFrame is multiplied by the apodization function, transforming the data in the time domain.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If <cite>fid_df</cite> is not a pandas DataFrame, <cite>LB</cite> is negative, or <cite>apodization_type</cite> is not 
+‘gaussian’ or ‘exponential’.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
 <section id="module-protomix.baseline_correction">
 <span id="protomix-baseline-correction-module"></span><h2>protomix.baseline_correction module<a class="headerlink" href="#module-protomix.baseline_correction" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="protomix.baseline_correction.WhittakerSmooth">
-<span class="sig-prename descclassname"><span class="pre">protomix.baseline_correction.</span></span><span class="sig-name descname"><span class="pre">WhittakerSmooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/baseline_correction.html#WhittakerSmooth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.baseline_correction.WhittakerSmooth" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="protomix.baseline_correction.airpls">
-<span class="sig-prename descclassname"><span class="pre">protomix.baseline_correction.</span></span><span class="sig-name descname"><span class="pre">airpls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxIter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/baseline_correction.html#airpls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.baseline_correction.airpls" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="protomix.baseline_correction.als">
-<span class="sig-prename descclassname"><span class="pre">protomix.baseline_correction.</span></span><span class="sig-name descname"><span class="pre">als</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxIter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/baseline_correction.html#als"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.baseline_correction.als" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="protomix.baseline_correction.arpls">
-<span class="sig-prename descclassname"><span class="pre">protomix.baseline_correction.</span></span><span class="sig-name descname"><span class="pre">arpls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itermax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/baseline_correction.html#arpls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.baseline_correction.arpls" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="protomix.baseline_correction.baseline_correction">
-<span class="sig-prename descclassname"><span class="pre">protomix.baseline_correction.</span></span><span class="sig-name descname"><span class="pre">baseline_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'als'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxIter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/baseline_correction.html#baseline_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.baseline_correction.baseline_correction" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">baseline_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'als'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">porder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxIter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/baseline_correction.html#baseline_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.baseline_correction.baseline_correction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply different baseline correction algorithms to each row of a DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -265,14 +232,26 @@
 <span id="protomix-binning-module"></span><h2>protomix.binning module<a class="headerlink" href="#module-protomix.binning" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.binning.binning">
-<span class="sig-prename descclassname"><span class="pre">protomix.binning.</span></span><span class="sig-name descname"><span class="pre">binning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'trapezoidal'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/binning.html#binning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.binning.binning" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">binning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'trapezoidal'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/binning.html#binning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.binning.binning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform uniform binning on an NMR spectrum by integrating the area under the curve for each bin.</p>
-<p>Parameters:
-- spectra_df (pd.DataFrame): DataFrame containing the spectra. Rows are samples, columns are ppm values.
-- bin_size (float): Size of the bin in ppm.
-- method (str): Integration method - “trapezoidal” or “rectangular”.</p>
-<p>Returns:
-- pd.DataFrame: Binned spectra with integrated intensities.</p>
+<p>This function applies uniform binning to the provided NMR spectra, dividing the spectrum into bins of 
+a specified size and integrating the area under the curve within each bin. The integration can be performed 
+using either the trapezoidal or rectangular method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – A DataFrame containing the spectra, where each row represents a sample, and columns represent ppm values.</p></li>
+<li><p><strong>bin_size</strong> (<em>float</em>) – The size of each bin in ppm.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – The integration method to use for binning. Options are “trapezoidal” (default) or “rectangular”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the binned spectra with integrated intensities for each bin.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -280,7 +259,7 @@
 <span id="protomix-extract-fids-module"></span><h2>protomix.extract_fids module<a class="headerlink" href="#module-protomix.extract_fids" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.extract_fids.extract_fids">
-<span class="sig-prename descclassname"><span class="pre">protomix.extract_fids.</span></span><span class="sig-name descname"><span class="pre">extract_fids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/extract_fids.html#extract_fids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.extract_fids.extract_fids" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extract_fids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/extract_fids.html#extract_fids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.extract_fids.extract_fids" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract Free Induction Decay (FID) data from binary files and construct a DataFrame.</p>
 <p>This function navigates through a specified directory, locates binary files named ‘fid’,
 and extracts FID data from them. It then assembles a DataFrame where each row represents
@@ -313,7 +292,7 @@ contains no ‘fid’ files, or if any ‘fid’ file has an unexpected data len
 <span id="protomix-extract-params-module"></span><h2>protomix.extract_params module<a class="headerlink" href="#module-protomix.extract_params" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.extract_params.extract_params">
-<span class="sig-prename descclassname"><span class="pre">protomix.extract_params.</span></span><span class="sig-name descname"><span class="pre">extract_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/extract_params.html#extract_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.extract_params.extract_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extract_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/extract_params.html#extract_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.extract_params.extract_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract parameters from ‘acqus’ files located within a directory hierarchy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -333,7 +312,7 @@ contains no ‘fid’ files, or if any ‘fid’ file has an unexpected data len
 <span id="protomix-fourier-transform-module"></span><h2>protomix.fourier_transform module<a class="headerlink" href="#module-protomix.fourier_transform" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.fourier_transform.fourier_transform">
-<span class="sig-prename descclassname"><span class="pre">protomix.fourier_transform.</span></span><span class="sig-name descname"><span class="pre">fourier_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/fourier_transform.html#fourier_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.fourier_transform.fourier_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fourier_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/fourier_transform.html#fourier_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.fourier_transform.fourier_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply Fourier Transform to FID (Free Induction Decay) signals in a DataFrame and convert to chemical shift values in ppm.</p>
 <p>This function takes a DataFrame containing rows of FID signals, applies the Fourier Transform to each row,
 and then scales the frequencies to chemical shift values in ppm using parameters from the <cite>acqus_df</cite> DataFrame.</p>
@@ -364,13 +343,24 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-group-delay-removal-module"></span><h2>protomix.group_delay_removal module<a class="headerlink" href="#module-protomix.group_delay_removal" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.group_delay_removal.group_delay_removal">
-<span class="sig-prename descclassname"><span class="pre">protomix.group_delay_removal.</span></span><span class="sig-name descname"><span class="pre">group_delay_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/group_delay_removal.html#group_delay_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.group_delay_removal.group_delay_removal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes the group delay from the input FID data.</p>
-<p>Parameters:
-- fid_df (pd.DataFrame): Input FID data with rows as individual FID values and columns representing time.
-- acqus_df (pd.DataFrame): Input FID data with rows as individual FID values and columns representing time.</p>
-<p>Returns:
-- pd.DataFrame: FID data with group delay removed.</p>
+<span class="sig-name descname"><span class="pre">group_delay_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/group_delay_removal.html#group_delay_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.group_delay_removal.group_delay_removal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the group delay from the input FID (Free Induction Decay) data.</p>
+<p>This function processes the FID data by removing the group delay, which is an artifact
+introduced during data acquisition, to produce cleaner, more accurate signals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents an individual FID signal, and columns represent time points.</p></li>
+<li><p><strong>acqus_df</strong> (<em>pd.DataFrame</em>) – A DataFrame containing acquisition parameters used to correct the group delay.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with the group delay removed from the FID signals.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -378,14 +368,24 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-internal-referencing-module"></span><h2>protomix.internal_referencing module<a class="headerlink" href="#module-protomix.internal_referencing" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.internal_referencing.internal_referencing">
-<span class="sig-prename descclassname"><span class="pre">protomix.internal_referencing.</span></span><span class="sig-name descname"><span class="pre">internal_referencing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ppm_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ppm_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/internal_referencing.html#internal_referencing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.internal_referencing.internal_referencing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reference a DataFrame of NMR spectra_df by shifting the spectrum values to set the TSP peak to 0 ppm.</p>
-<p>Parameters:
-- spectra_df (DataFrame): DataFrame where each row is a complex NMR spectrum and columns are ppm values.
-- ppm_min (float, optional): The minimum ppm value for the search range. Default is -0.2.
-- ppm_max (float, optional): The maximum ppm value for the search range. Default is 0.2.</p>
-<p>Returns:
-- DataFrame: The shifted spectra_df with original ppm values as column names.</p>
+<span class="sig-name descname"><span class="pre">internal_referencing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ppm_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ppm_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/internal_referencing.html#internal_referencing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.internal_referencing.internal_referencing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference a DataFrame of NMR spectra by shifting the spectrum values to align the TSP peak to 0 ppm.</p>
+<p>This function adjusts the chemical shift values in the provided NMR spectra so that the TSP (trimethylsilyl propionate) peak is set to 0 ppm. The adjustment is performed within a specified ppm range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents a complex NMR spectrum, and columns correspond to ppm (parts per million) values.</p></li>
+<li><p><strong>ppm_min</strong> (<em>float</em><em>, </em><em>optional</em>) – The minimum ppm value for the search range to locate the TSP peak. Default is -0.2.</p></li>
+<li><p><strong>ppm_max</strong> (<em>float</em><em>, </em><em>optional</em>) – The maximum ppm value for the search range to locate the TSP peak. Default is 0.2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with spectra shifted so that the TSP peak is aligned at 0 ppm, with the original ppm values as column names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -393,12 +393,21 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-negative-values-zeroing-module"></span><h2>protomix.negative_values_zeroing module<a class="headerlink" href="#module-protomix.negative_values_zeroing" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.negative_values_zeroing.negative_values_zeroing">
-<span class="sig-prename descclassname"><span class="pre">protomix.negative_values_zeroing.</span></span><span class="sig-name descname"><span class="pre">negative_values_zeroing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/negative_values_zeroing.html#negative_values_zeroing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.negative_values_zeroing.negative_values_zeroing" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">negative_values_zeroing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/negative_values_zeroing.html#negative_values_zeroing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.negative_values_zeroing.negative_values_zeroing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set all negative values in the spectra to zero.</p>
-<p>Parameters:
-- spectra (pd.DataFrame): DataFrame where each row is a spectrum.</p>
-<p>Returns:
-- pd.DataFrame: Spectra with negative values set to zero, retaining original indexes.</p>
+<p>This function processes a DataFrame of spectra, setting any negative values to zero while retaining
+the original structure and indexes of the DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents a spectrum, and columns correspond to spectral data points.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with the same structure as the input, but with all negative values replaced by zero.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -406,13 +415,25 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-normalize-module"></span><h2>protomix.normalize module<a class="headerlink" href="#module-protomix.normalize" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.normalize.normalize">
-<span class="sig-prename descclassname"><span class="pre">protomix.normalize.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'PQN'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/normalize.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.normalize.normalize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'PQN'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/normalize.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.normalize.normalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply different normalization methods to a DataFrame of spectra.</p>
-<p>Parameters:
-- spectra_df (pd.DataFrame): The DataFrame containing the spectra with samples as rows and data points as columns.
-- method (str): The normalization method to apply. Options: ‘PQN’ (default), ‘TotalArea’, ‘SNV’.</p>
-<p>Returns:
-- pd.DataFrame: The normalized spectra.</p>
+<p>This function normalizes the spectra in the provided DataFrame using the specified method. 
+Each row in the DataFrame represents a sample, and each column corresponds to a data point in the spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – The DataFrame containing the spectra, with samples as rows and data points as columns.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – The normalization method to apply. Options are ‘PQN’ (Probabilistic Quotient Normalization), 
+‘TotalArea’ (Total Area Normalization), or ‘SNV’ (Standard Normal Variate). Default is ‘PQN’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The normalized spectra as a DataFrame.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -420,12 +441,19 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-phase-correction-module"></span><h2>protomix.phase_correction module<a class="headerlink" href="#module-protomix.phase_correction" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.phase_correction.phase_correction">
-<span class="sig-prename descclassname"><span class="pre">protomix.phase_correction.</span></span><span class="sig-name descname"><span class="pre">phase_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/phase_correction.html#phase_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.phase_correction.phase_correction" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">phase_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/phase_correction.html#phase_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.phase_correction.phase_correction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply phase correction to spectra in a DataFrame.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>spectra_df (pd.DataFrame): DataFrame containing spectra as rows and ppm values as columns.</p>
+<p>This function applies a phase correction to each spectrum in the provided DataFrame, ensuring that the
+spectral peaks are properly aligned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – A DataFrame containing spectra, with each row representing a spectrum and columns corresponding to ppm values.</p>
 </dd>
-<dt>Returns:</dt><dd><p>pd.DataFrame: DataFrame containing phase-corrected spectra.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the phase-corrected spectra.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -435,7 +463,7 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-plot-module"></span><h2>protomix.plot module<a class="headerlink" href="#module-protomix.plot" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.plot.plot">
-<span class="sig-prename descclassname"><span class="pre">protomix.plot.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Title'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Time</span> <span class="pre">(s)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Intensity</span> <span class="pre">(a.u.)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blue'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/plot.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.plot.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Title'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Time</span> <span class="pre">(s)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Intensity</span> <span class="pre">(a.u.)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blue'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/plot.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.plot.plot" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -443,13 +471,23 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-region-removal-module"></span><h2>protomix.region_removal module<a class="headerlink" href="#module-protomix.region_removal" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.region_removal.region_removal">
-<span class="sig-prename descclassname"><span class="pre">protomix.region_removal.</span></span><span class="sig-name descname"><span class="pre">region_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(4.5,</span> <span class="pre">6.1)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/region_removal.html#region_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.region_removal.region_removal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Zero out specified ppm range in each spectrum in the DataFrame.</p>
-<p>Parameters:
-- spectra_df (pd.DataFrame): DataFrame where each row is a spectrum and columns are ppm values.
-- range (tuple): Start and end ppm values of the region to zero out.</p>
-<p>Returns:
-- pd.DataFrame: Updated spectra_df with the specified region zeroed out, retaining original indexes.</p>
+<span class="sig-name descname"><span class="pre">region_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(4.5,</span> <span class="pre">6.1)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/region_removal.html#region_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.region_removal.region_removal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zero out a specified ppm range in each spectrum within the DataFrame.</p>
+<p>This function sets the values within a specified ppm range to zero for each spectrum in the DataFrame, effectively removing that region from the spectra.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents a spectrum and columns correspond to ppm values.</p></li>
+<li><p><strong>range</strong> (<em>tuple</em>) – A tuple specifying the start and end ppm values of the region to be zeroed out. Default is (4.5, 6.1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An updated DataFrame with the specified ppm range zeroed out, retaining the original indexes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -460,14 +498,26 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-solvent-residuals-removal-module"></span><h2>protomix.solvent_residuals_removal module<a class="headerlink" href="#module-protomix.solvent_residuals_removal" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.solvent_residuals_removal.solvent_residuals_removal">
-<span class="sig-prename descclassname"><span class="pre">protomix.solvent_residuals_removal.</span></span><span class="sig-name descname"><span class="pre">solvent_residuals_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returnSolvent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/solvent_residuals_removal.html#solvent_residuals_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.solvent_residuals_removal.solvent_residuals_removal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes solvent residuals from the input FID data.</p>
-<p>Parameters:
-- fid_df (pd.DataFrame): Input FID data with rows as individual FID values and columns representing time.
-- lam (float): Regularization parameter. Defaults to 1e6.
-- returnSolvent (bool): If True, returns both the corrected FID data and the solvent residuals. Defaults to False.</p>
-<p>Returns:
-- pd.DataFrame or (pd.DataFrame, pd.DataFrame): Corrected FID data and, optionally, solvent residuals.</p>
+<span class="sig-name descname"><span class="pre">solvent_residuals_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returnSolvent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/solvent_residuals_removal.html#solvent_residuals_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.solvent_residuals_removal.solvent_residuals_removal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove solvent residuals from the input FID (Free Induction Decay) data.</p>
+<p>This function processes the input FID data to remove solvent residuals, which are unwanted signals
+typically present in NMR data. The function can also return the solvent residuals if specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents an individual FID signal, and columns correspond to time points.</p></li>
+<li><p><strong>lam</strong> (<em>float</em>) – The regularization parameter used during the removal process. Defaults to 1e6.</p></li>
+<li><p><strong>returnSolvent</strong> (<em>bool</em>) – If True, the function returns both the corrected FID data and the solvent residuals. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If <cite>returnSolvent</cite> is False, returns a DataFrame with the corrected FID data.
+If <cite>returnSolvent</cite> is True, returns a tuple of two DataFrames: (corrected FID data, solvent residuals).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame or tuple of (pd.DataFrame, pd.DataFrame)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -475,7 +525,7 @@ spectral offset (<cite>$O1</cite>), and NMR frequency (<cite>$SFO1</cite>) from 
 <span id="protomix-utils-module"></span><h2>protomix.utils module<a class="headerlink" href="#module-protomix.utils" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.utils.ccfftshift">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">ccfftshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/protomix/utils.html#ccfftshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.ccfftshift" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ccfftshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/protomix/utils.html#ccfftshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.ccfftshift" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function calculates the shift within the given bounds for each input signal to align optimally with the target
 using FFT. Loosly based on Giorgio Tomasi’s implementation for icoshift</p>
 <dl class="field-list simple">
@@ -497,57 +547,56 @@ costs: 2-D numpy.ndarray shift_range_length x m+1 - first row shift range)</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="protomix.utils.get_avg2_target">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">get_avg2_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg2factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#get_avg2_target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_avg2_target" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="protomix.utils.get_fill_matrix">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">get_fill_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#get_fill_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_fill_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<span class="sig-name descname"><span class="pre">get_fill_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#get_fill_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_fill_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a fill matrix for signal processing based on the specified fill type.</p>
+<p>This function creates a matrix used to fill or adjust signals according to the specified method.
+The fill matrix can be used in signal processing tasks, such as zero-filling or padding signals 
+to a desired length.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>signals</strong> – </p></li>
-<li><p><strong>fill_type</strong> – </p></li>
+<li><p><strong>signals</strong> (<em>np.ndarray</em>) – A 2D numpy array where each row represents a signal, and columns represent data points within the signal.</p></li>
+<li><p><strong>fill_type</strong> (<em>str</em>) – The type of fill operation to perform. Options might include methods like ‘zero’, ‘mean’, or ‘edge’.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>A numpy array representing the fill matrix, with the same shape as the input signals array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="protomix.utils.get_index_signal_with_highest_correlation">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">get_index_signal_with_highest_correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/protomix/utils.html#get_index_signal_with_highest_correlation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_index_signal_with_highest_correlation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="protomix.utils.get_max_signal_idx">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">get_max_signal_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/utils.html#get_max_signal_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_max_signal_idx" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="protomix.utils.get_paths">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">get_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#get_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_paths" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieve all paths matching the specified filename within the root_directory and its subdirectories.</p>
-<p>Parameters:
-- root_directory (str): The starting directory from which the search begins.
-- filename (str): The name of the file to search for.</p>
-<p>Returns:
-- list: A list of full paths to the files matching the specified filename. If no files are found, returns an empty list.</p>
-<p>Note:
-This function performs a recursive search, so it will also look in all subdirectories of the root_directory.</p>
+<span class="sig-name descname"><span class="pre">get_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#get_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.get_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all paths matching the specified filename within the root directory and its subdirectories.</p>
+<p>This function performs a recursive search, starting from the given root directory, to find all files 
+that match the specified filename. It returns a list of full paths to these files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_directory</strong> (<em>str</em>) – The starting directory from which the search begins.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – The name of the file to search for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of full paths to the files matching the specified filename. If no files are found, returns an empty list.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>This function performs a recursive search, so it will also look in all subdirectories of the root directory.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="protomix.utils.interpolate_nan">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">interpolate_nan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/protomix/utils.html#interpolate_nan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.interpolate_nan" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="protomix.utils.shift_signals">
-<span class="sig-prename descclassname"><span class="pre">protomix.utils.</span></span><span class="sig-name descname"><span class="pre">shift_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#shift_signals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.shift_signals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shift_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/protomix/utils.html#shift_signals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.utils.shift_signals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shift all signals according to the provided shifts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -576,13 +625,24 @@ and the second column specifies the right fill values.
 <span id="protomix-window-selection-module"></span><h2>protomix.window_selection module<a class="headerlink" href="#module-protomix.window_selection" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.window_selection.window_selection">
-<span class="sig-prename descclassname"><span class="pre">protomix.window_selection.</span></span><span class="sig-name descname"><span class="pre">window_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.2,</span> <span class="pre">10)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/window_selection.html#window_selection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.window_selection.window_selection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extract a specified ppm range from the spectra_df DataFrame.</p>
-<p>Parameters:
-- spectra_df (pd.DataFrame): DataFrame where each row is a spectrum and columns are ppm values.
-- range (tuple): Start and end ppm values of the region to extract.</p>
-<p>Returns:
-- pd.DataFrame: Extracted spectra_df with the specified ppm range, retaining original indexes.</p>
+<span class="sig-name descname"><span class="pre">window_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.2,</span> <span class="pre">10)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/window_selection.html#window_selection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.window_selection.window_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract a specified ppm range from the <cite>spectra_df</cite> DataFrame.</p>
+<p>This function extracts the spectral data within a specified ppm range from each spectrum in the DataFrame.
+The resulting DataFrame retains the original indexes but only includes the selected ppm range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spectra_df</strong> (<em>pd.DataFrame</em>) – A DataFrame where each row represents a spectrum and columns correspond to ppm values.</p></li>
+<li><p><strong>range</strong> (<em>tuple</em>) – A tuple specifying the start and end ppm values of the region to extract. Default is (0.2, 10).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing only the spectral data within the specified ppm range, retaining the original indexes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -590,19 +650,28 @@ and the second column specifies the right fill values.
 <span id="protomix-zero-filling-module"></span><h2>protomix.zero_filling module<a class="headerlink" href="#module-protomix.zero_filling" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="protomix.zero_filling.zero_filling">
-<span class="sig-prename descclassname"><span class="pre">protomix.zero_filling.</span></span><span class="sig-name descname"><span class="pre">zero_filling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/zero_filling.html#zero_filling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.zero_filling.zero_filling" title="Permalink to this definition">¶</a></dt>
-<dd><p>Zero-fill or add zeros to the end of FID signals in a DataFrame to achieve the target number of points.</p>
-<p>Parameters:
-- fid_df (pd.DataFrame): DataFrame containing FID signals in rows.
-- target_points (int): Target number of points.
-- acqus_df (pd.DataFrame): DataFrame containing acquisition parameters.</p>
-<p>Returns:
-- pd.DataFrame: DataFrame containing FID signals with zeros added to the end.</p>
+<span class="sig-name descname"><span class="pre">zero_filling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acqus_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/protomix/zero_filling.html#zero_filling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#protomix.zero_filling.zero_filling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zero-fill FID signals in a DataFrame to achieve the target number of points.</p>
+<p>This function adds zeros to the end of each FID signal in the provided DataFrame until the specified 
+target number of points is reached. Zero-filling is commonly used to increase the resolution of the 
+Fourier-transformed spectra.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid_df</strong> (<em>pd.DataFrame</em>) – A DataFrame containing FID signals, with each row representing an individual FID signal.</p></li>
+<li><p><strong>acqus_df</strong> (<em>pd.DataFrame</em>) – A DataFrame containing acquisition parameters relevant to the FID signals.</p></li>
+<li><p><strong>target_points</strong> (<em>int</em>) – The target number of points for each FID signal after zero-filling. Default is 5000.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame with FID signals that have been zero-filled to the specified target number of points.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
-</section>
-<section id="module-protomix">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-protomix" title="Permalink to this heading">¶</a></h2>
 </section>
 </section>
 

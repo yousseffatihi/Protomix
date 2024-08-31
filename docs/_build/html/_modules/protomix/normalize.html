@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -101,12 +100,17 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply different normalization methods to a DataFrame of spectra.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    - spectra_df (pd.DataFrame): The DataFrame containing the spectra with samples as rows and data points as columns.</span>
-<span class="sd">    - method (str): The normalization method to apply. Options: &#39;PQN&#39; (default), &#39;TotalArea&#39;, &#39;SNV&#39;.</span>
+<span class="sd">    This function normalizes the spectra in the provided DataFrame using the specified method. </span>
+<span class="sd">    Each row in the DataFrame represents a sample, and each column corresponds to a data point in the spectrum.</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">    - pd.DataFrame: The normalized spectra.</span>
+<span class="sd">    :param spectra_df: The DataFrame containing the spectra, with samples as rows and data points as columns.</span>
+<span class="sd">    :type spectra_df: pd.DataFrame</span>
+<span class="sd">    :param method: The normalization method to apply. Options are &#39;PQN&#39; (Probabilistic Quotient Normalization), </span>
+<span class="sd">        &#39;TotalArea&#39; (Total Area Normalization), or &#39;SNV&#39; (Standard Normal Variate). Default is &#39;PQN&#39;.</span>
+<span class="sd">    :type method: str</span>
+<span class="sd">    </span>
+<span class="sd">    :return: The normalized spectra as a DataFrame.</span>
+<span class="sd">    :rtype: pd.DataFrame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PQN&#39;</span><span class="p">:</span>

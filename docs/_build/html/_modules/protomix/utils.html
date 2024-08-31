@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -104,17 +103,20 @@
 
 <div class="viewcode-block" id="get_paths"><a class="viewcode-back" href="../../protomix.html#protomix.utils.get_paths">[docs]</a><span class="k">def</span> <span class="nf">get_paths</span><span class="p">(</span><span class="n">root_directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Retrieve all paths matching the specified filename within the root_directory and its subdirectories.</span>
+<span class="sd">    Retrieve all paths matching the specified filename within the root directory and its subdirectories.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    - root_directory (str): The starting directory from which the search begins.</span>
-<span class="sd">    - filename (str): The name of the file to search for.</span>
+<span class="sd">    This function performs a recursive search, starting from the given root directory, to find all files </span>
+<span class="sd">    that match the specified filename. It returns a list of full paths to these files.</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">    - list: A list of full paths to the files matching the specified filename. If no files are found, returns an empty list.</span>
+<span class="sd">    :param root_directory: The starting directory from which the search begins.</span>
+<span class="sd">    :type root_directory: str</span>
+<span class="sd">    :param filename: The name of the file to search for.</span>
+<span class="sd">    :type filename: str</span>
+<span class="sd">    </span>
+<span class="sd">    :return: A list of full paths to the files matching the specified filename. If no files are found, returns an empty list.</span>
+<span class="sd">    :rtype: list</span>
 
-<span class="sd">    Note:</span>
-<span class="sd">    This function performs a recursive search, so it will also look in all subdirectories of the root_directory.</span>
+<span class="sd">    :note: This function performs a recursive search, so it will also look in all subdirectories of the root directory.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="c1"># Assertive checks for input parameters</span>
@@ -133,7 +135,7 @@
     
     <span class="k">return</span> <span class="n">paths</span></div>
 
-<div class="viewcode-block" id="get_index_signal_with_highest_correlation"><a class="viewcode-back" href="../../protomix.html#protomix.utils.get_index_signal_with_highest_correlation">[docs]</a><span class="k">def</span> <span class="nf">get_index_signal_with_highest_correlation</span><span class="p">(</span><span class="n">signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="k">def</span> <span class="nf">get_index_signal_with_highest_correlation</span><span class="p">(</span><span class="n">signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">signals</span><span class="p">)):</span>
         <span class="c1"># make a local copy of the signals cause we need to interpolate potential NaN&#39;s</span>
         <span class="n">signals</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -142,9 +144,9 @@
     <span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
     <span class="c1"># return index of the max of sum over each row and signals</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">signals</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></div>
+    <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">signals</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<div class="viewcode-block" id="get_avg2_target"><a class="viewcode-back" href="../../protomix.html#protomix.utils.get_avg2_target">[docs]</a><span class="k">def</span> <span class="nf">get_avg2_target</span><span class="p">(</span><span class="n">signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">avg2factor</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">get_avg2_target</span><span class="p">(</span><span class="n">signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">avg2factor</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">avg2factor</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
@@ -155,18 +157,18 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;signals dimension not 2&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Wrong input types&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Wrong input types&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="get_max_signal_idx"><a class="viewcode-back" href="../../protomix.html#protomix.utils.get_max_signal_idx">[docs]</a><span class="k">def</span> <span class="nf">get_max_signal_idx</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">signal_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_max_signal_idx</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">signal_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signal_axis</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">signal_axis</span> <span class="o">&lt;</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">signal_axis</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;signals dimension not 2 or signal_axis bigger than signals dimension&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Wrong input types&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Wrong input types&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="interpolate_nan"><a class="viewcode-back" href="../../protomix.html#protomix.utils.interpolate_nan">[docs]</a><span class="k">def</span> <span class="nf">interpolate_nan</span><span class="p">(</span><span class="n">signals</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">interpolate_nan</span><span class="p">(</span><span class="n">signals</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;signal size and signal&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">signals</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
@@ -182,15 +184,25 @@
             <span class="n">nan_free_signals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">signal</span><span class="p">[</span><span class="n">mask</span><span class="p">]))</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nan_free_signals</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Max 2 dimensional numpy.ndarrays allowed&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Max 2 dimensional numpy.ndarrays allowed&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="get_fill_matrix"><a class="viewcode-back" href="../../protomix.html#protomix.utils.get_fill_matrix">[docs]</a><span class="k">def</span> <span class="nf">get_fill_matrix</span><span class="p">(</span><span class="n">signals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">fill_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a fill matrix for signal processing based on the specified fill type.</span>
 
-<span class="sd">    :param signals:</span>
-<span class="sd">    :param fill_type:</span>
-<span class="sd">    :return:</span>
+<span class="sd">    This function creates a matrix used to fill or adjust signals according to the specified method.</span>
+<span class="sd">    The fill matrix can be used in signal processing tasks, such as zero-filling or padding signals </span>
+<span class="sd">    to a desired length.</span>
+
+<span class="sd">    :param signals: A 2D numpy array where each row represents a signal, and columns represent data points within the signal.</span>
+<span class="sd">    :type signals: np.ndarray</span>
+<span class="sd">    :param fill_type: The type of fill operation to perform. Options might include methods like &#39;zero&#39;, &#39;mean&#39;, or &#39;edge&#39;.</span>
+<span class="sd">    :type fill_type: str</span>
+<span class="sd">    </span>
+<span class="sd">    :return: A numpy array representing the fill matrix, with the same shape as the input signals array.</span>
+<span class="sd">    :rtype: np.ndarray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fill_type</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">signals</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">fill_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;nan&#39;</span><span class="p">,</span> <span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="s1">&#39;adjacent&#39;</span><span class="p">]:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid input&#39;</span><span class="p">)</span>

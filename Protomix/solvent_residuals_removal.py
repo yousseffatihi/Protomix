@@ -7,15 +7,21 @@ from scipy.sparse.linalg import splu
 
 def solvent_residuals_removal(fid_df: pd.DataFrame, lam: float = 1e6, returnSolvent: bool = False):
     """
-    Removes solvent residuals from the input FID data.
+    Remove solvent residuals from the input FID (Free Induction Decay) data.
+
+    This function processes the input FID data to remove solvent residuals, which are unwanted signals
+    typically present in NMR data. The function can also return the solvent residuals if specified.
+
+    :param fid_df: A DataFrame where each row represents an individual FID signal, and columns correspond to time points.
+    :type fid_df: pd.DataFrame
+    :param lam: The regularization parameter used during the removal process. Defaults to 1e6.
+    :type lam: float
+    :param returnSolvent: If True, the function returns both the corrected FID data and the solvent residuals. Defaults to False.
+    :type returnSolvent: bool
     
-    Parameters:
-    - fid_df (pd.DataFrame): Input FID data with rows as individual FID values and columns representing time.
-    - lam (float): Regularization parameter. Defaults to 1e6.
-    - returnSolvent (bool): If True, returns both the corrected FID data and the solvent residuals. Defaults to False.
-    
-    Returns:
-    - pd.DataFrame or (pd.DataFrame, pd.DataFrame): Corrected FID data and, optionally, solvent residuals.
+    :return: If `returnSolvent` is False, returns a DataFrame with the corrected FID data.
+             If `returnSolvent` is True, returns a tuple of two DataFrames: (corrected FID data, solvent residuals).
+    :rtype: pd.DataFrame or tuple of (pd.DataFrame, pd.DataFrame)
     """
     
     def diff(m, d=2):

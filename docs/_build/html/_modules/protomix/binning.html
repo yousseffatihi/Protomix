@@ -45,7 +45,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protomix.html">protomix package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.Icoshift">protomix.Icoshift module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#protomix-icoshift-module">protomix.Icoshift module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.apodization">protomix.apodization module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.baseline_correction">protomix.baseline_correction module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.binning">protomix.binning module</a></li>
@@ -64,7 +64,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.utils">protomix.utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.window_selection">protomix.window_selection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix.zero_filling">protomix.zero_filling module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protomix.html#module-protomix">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -101,13 +100,19 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Perform uniform binning on an NMR spectrum by integrating the area under the curve for each bin.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    - spectra_df (pd.DataFrame): DataFrame containing the spectra. Rows are samples, columns are ppm values.</span>
-<span class="sd">    - bin_size (float): Size of the bin in ppm.</span>
-<span class="sd">    - method (str): Integration method - &quot;trapezoidal&quot; or &quot;rectangular&quot;.</span>
+<span class="sd">    This function applies uniform binning to the provided NMR spectra, dividing the spectrum into bins of </span>
+<span class="sd">    a specified size and integrating the area under the curve within each bin. The integration can be performed </span>
+<span class="sd">    using either the trapezoidal or rectangular method.</span>
 
-<span class="sd">    Returns:</span>
-<span class="sd">    - pd.DataFrame: Binned spectra with integrated intensities.</span>
+<span class="sd">    :param spectra_df: A DataFrame containing the spectra, where each row represents a sample, and columns represent ppm values.</span>
+<span class="sd">    :type spectra_df: pd.DataFrame</span>
+<span class="sd">    :param bin_size: The size of each bin in ppm.</span>
+<span class="sd">    :type bin_size: float</span>
+<span class="sd">    :param method: The integration method to use for binning. Options are &quot;trapezoidal&quot; (default) or &quot;rectangular&quot;.</span>
+<span class="sd">    :type method: str</span>
+<span class="sd">    </span>
+<span class="sd">    :return: A DataFrame containing the binned spectra with integrated intensities for each bin.</span>
+<span class="sd">    :rtype: pd.DataFrame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="c1"># Extract ppm values from columns</span>

@@ -5,13 +5,19 @@ def binning(spectra_df: pd.DataFrame, bin_size: float, method="trapezoidal") -> 
     """
     Perform uniform binning on an NMR spectrum by integrating the area under the curve for each bin.
 
-    Parameters:
-    - spectra_df (pd.DataFrame): DataFrame containing the spectra. Rows are samples, columns are ppm values.
-    - bin_size (float): Size of the bin in ppm.
-    - method (str): Integration method - "trapezoidal" or "rectangular".
+    This function applies uniform binning to the provided NMR spectra, dividing the spectrum into bins of 
+    a specified size and integrating the area under the curve within each bin. The integration can be performed 
+    using either the trapezoidal or rectangular method.
 
-    Returns:
-    - pd.DataFrame: Binned spectra with integrated intensities.
+    :param spectra_df: A DataFrame containing the spectra, where each row represents a sample, and columns represent ppm values.
+    :type spectra_df: pd.DataFrame
+    :param bin_size: The size of each bin in ppm.
+    :type bin_size: float
+    :param method: The integration method to use for binning. Options are "trapezoidal" (default) or "rectangular".
+    :type method: str
+    
+    :return: A DataFrame containing the binned spectra with integrated intensities for each bin.
+    :rtype: pd.DataFrame
     """
     
     # Extract ppm values from columns
