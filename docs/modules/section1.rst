@@ -5,4 +5,3 @@ Protomix.extract\_fids
    :members:
    :undoc-members:
    :show-inheritance:
-   :no-index:
