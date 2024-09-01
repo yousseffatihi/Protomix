@@ -1,4 +1,4 @@
-protomix.extract\_fids
+Protomix.extract\_fids
 -----------------------------
 
 .. automodule:: Protomix.extract_fids
