@@ -7,19 +7,26 @@ from scipy.sparse.linalg import spsolve
 def baseline_correction(spectra_df: pd.DataFrame, method="als", lambda_=100, porder=1, maxIter=100, lam=1e4, ratio=0.05):
     """
     Apply different baseline correction algorithms to each row of a DataFrame.
+
+    :param spectra_df: DataFrame where each row is a spectrum to be baseline corrected.
+    :type spectra_df: pd.DataFrame
+    :param method: Method for baseline correction. Options are "als", "arpls", "airpls".
+    :type method: str
+    :param lambda_: Regularization parameter for ALS and AIRPLS.
+    :type lambda_: float
+    :param porder: Asymmetry parameter for ALS.
+    :type porder: float
+    :param maxIter: Maximum number of iterations for ALS and AIRPLS.
+    :type maxIter: int
+    :param lam: Lambda parameter for ARPLS.
+    :type lam: float
+    :param ratio: Ratio parameter for ARPLS.
+    :type ratio: float
     
-    Parameters:
-    - spectra_df (DataFrame): DataFrame where each row is a spectrum to be baseline corrected.
-    - method (str): Method for baseline correction. Options: "als", "arpls", "airpls".
-    - lambda_ (float): Regularization parameter for ALS and AIRPLS.
-    - porder (float): Asymmetry parameter for ALS.
-    - maxIter (int): Maximum number of iterations for ALS and AIRPLS.
-    - lam (float): Lambda parameter for ARPLS.
-    - ratio (float): Ratio parameter for ARPLS.
-    
-    Returns:
-    - DataFrame: Baseline corrected spectra_df.
+    :return: DataFrame with baseline corrected spectra.
+    :rtype: pd.DataFrame
     """
+
     if method == "als":
         corrected_spectra_df = spectra_df.apply(lambda row: als(row, lambda_, porder, maxIter), axis=1)
     elif method == "arpls":

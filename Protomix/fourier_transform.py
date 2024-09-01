@@ -6,19 +6,20 @@ def fourier_transform(fid_df: pd.DataFrame, acqus_df: pd.DataFrame) -> pd.DataFr
     Apply Fourier Transform to FID (Free Induction Decay) signals in a DataFrame and convert to chemical shift values in ppm.
 
     This function takes a DataFrame containing rows of FID signals, applies the Fourier Transform to each row,
-    and then scales the frequencies to chemical shift values in ppm using parameters from the acqus_df DataFrame.
+    and then scales the frequencies to chemical shift values in ppm using parameters from the `acqus_df` DataFrame.
 
-    Parameters:
-    - fid_df (pd.DataFrame): DataFrame containing FID signals in rows. Each row represents an FID signal from a sample.
-    - acqus_df (pd.DataFrame): DataFrame containing acquisition parameters necessary for the transformation. 
-      It should include spectral width ('$SW_h'), spectral offset ('$O1'), and NMR frequency ('$SFO1').
+    :param fid_df: DataFrame containing FID signals in rows. Each row represents an FID signal from a sample.
+    :type fid_df: pd.DataFrame
+    :param acqus_df: DataFrame containing acquisition parameters necessary for the transformation. 
+        It should include spectral width (`$SW_h`), spectral offset (`$O1`), and NMR frequency (`$SFO1`).
+    :type acqus_df: pd.DataFrame
 
-    Returns:
-    - pd.DataFrame: DataFrame containing Fourier-transformed spectra. Columns represent chemical shift values in ppm,
-      and rows correspond to the transformed FID signals.
+    :return: DataFrame containing Fourier-transformed spectra. Columns represent chemical shift values in ppm,
+        and rows correspond to the transformed FID signals.
+    :rtype: pd.DataFrame
 
-    The function performs a Fourier Transform on each FID signal in fid_df. The spectral width ('$SW_h'),
-    spectral offset ('$O1'), and NMR frequency ('$SFO1') from acqus_df are used to calculate the ppm scale for the spectra.
+    :notes: The function performs a Fourier Transform on each FID signal in `fid_df`. The spectral width (`$SW_h`),
+        spectral offset (`$O1`), and NMR frequency (`$SFO1`) from `acqus_df` are used to calculate the ppm scale for the spectra.
     """
 
     # Get the values from the DataFrame as a NumPy array

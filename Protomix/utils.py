@@ -8,17 +8,20 @@ import logging
 
 def get_paths(root_directory: str, filename: str) -> list:
     """
-    Retrieve all paths matching the specified filename within the root_directory and its subdirectories.
+    Retrieve all paths matching the specified filename within the root directory and its subdirectories.
 
-    Parameters:
-    - root_directory (str): The starting directory from which the search begins.
-    - filename (str): The name of the file to search for.
+    This function performs a recursive search, starting from the given root directory, to find all files 
+    that match the specified filename. It returns a list of full paths to these files.
 
-    Returns:
-    - list: A list of full paths to the files matching the specified filename. If no files are found, returns an empty list.
+    :param root_directory: The starting directory from which the search begins.
+    :type root_directory: str
+    :param filename: The name of the file to search for.
+    :type filename: str
+    
+    :return: A list of full paths to the files matching the specified filename. If no files are found, returns an empty list.
+    :rtype: list
 
-    Note:
-    This function performs a recursive search, so it will also look in all subdirectories of the root_directory.
+    :note: This function performs a recursive search, so it will also look in all subdirectories of the root directory.
     """
     
     # Assertive checks for input parameters
@@ -90,11 +93,21 @@ def interpolate_nan(signals):
 
 def get_fill_matrix(signals: np.ndarray, fill_type: str) -> np.ndarray:
     """
+    Generate a fill matrix for signal processing based on the specified fill type.
 
-    :param signals:
-    :param fill_type:
-    :return:
+    This function creates a matrix used to fill or adjust signals according to the specified method.
+    The fill matrix can be used in signal processing tasks, such as zero-filling or padding signals 
+    to a desired length.
+
+    :param signals: A 2D numpy array where each row represents a signal, and columns represent data points within the signal.
+    :type signals: np.ndarray
+    :param fill_type: The type of fill operation to perform. Options might include methods like 'zero', 'mean', or 'edge'.
+    :type fill_type: str
+    
+    :return: A numpy array representing the fill matrix, with the same shape as the input signals array.
+    :rtype: np.ndarray
     """
+
     if isinstance(signals, np.ndarray) and isinstance(fill_type, str):
         if signals.ndim != 2 and fill_type.lower() not in ['nan', 'zero', 'adjacent']:
             raise ValueError('Invalid input')
@@ -109,13 +122,22 @@ def get_fill_matrix(signals: np.ndarray, fill_type: str) -> np.ndarray:
 
 def shift_signals(signals: np.ndarray, shifts: np.ndarray, fill: Union[np.ndarray, str]) -> np.ndarray:
     """
-    Shifts all signals according to provided shifts
-    :param signals: m x n numpy.ndarray of m signals of n length
-    :param shifts: 1D npumpy.ndarray of length m containing each shift per signal - pos val shift to left
-    :param fill: fill values to use during signal shifting, defaults to numpy.nan, either provide a m x 2 numpy.ndarray
-                 with first col for left fill value, 2nd col for right fill value, or input str 'adjacent' to fill with
-                 copies of neighbouring values
-    :return: m x n numpy.ndarray of shifted signals
+    Shift all signals according to the provided shifts.
+
+    :param signals: A 2D numpy.ndarray of shape (m, n) where each row represents a signal of length n.
+    :type signals: np.ndarray
+    :param shifts: A 1D numpy.ndarray of length m containing the shift values for each signal.
+                   Positive values shift to the left.
+    :type shifts: np.ndarray
+    :param fill: Fill values to use during signal shifting. Defaults to numpy.nan.
+                Can be one of the following:
+                - A 2D numpy.ndarray of shape (m, 2), where the first column specifies the left fill values
+                and the second column specifies the right fill values.
+                - A string 'adjacent' to fill with copies of neighboring values.
+    :type fill: Union[np.ndarray, str]
+    
+    :return: A 2D numpy.ndarray of shape (m, n) containing the shifted signals.
+    :rtype: np.ndarray
     """
 
     # check inputs

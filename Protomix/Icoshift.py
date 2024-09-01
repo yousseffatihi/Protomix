@@ -5,13 +5,58 @@ import concurrent.futures
 import numpy as np
 import logging
 
-from Protomix import get_index_signal_with_highest_correlation, get_avg2_target, get_max_signal_idx, \
+from protomix.utils import get_index_signal_with_highest_correlation, get_avg2_target, get_max_signal_idx, \
 get_fill_matrix, shift_signals, ccfftshift
 
 
 # logging.basicConfig(level=logging.DEBUG)
 
 class Icoshift:
+    """
+    A class to perform Icoshift alignment on spectral data.
+
+    The Icoshift algorithm aligns signals (e.g., NMR spectra) to a reference signal by shifting them
+    to maximize the correlation with the reference. The alignment can be performed on the entire signal
+    or in defined intervals. The class supports various modes for determining the reference signal, 
+    alignment modes, and shift correction strategies.
+
+    Properties:
+        - **name (str):** The name of the Icoshift instance.
+        - **global_pre_align (bool):** Flag to enable or disable global pre-alignment.
+        - **unit_vector (np.ndarray):** Vector mapping units to sample points.
+        - **signal_names (List[str]):** List of names corresponding to the signals.
+        - **input_type (str):** Type of input (datapoints or units).
+        - **result (np.ndarray):** The aligned signals after running Icoshift.
+        - **signals (np.ndarray):** The input signals to be aligned.
+        - **inter (List[Tuple[Union[int, float], Union[int, float]]]):** User-defined intervals for alignment.
+        - **target (Tuple[str, Union[np.ndarray, list]]):** The target signal used for alignment.
+        - **avg2factor (int):** Factor used in the 'average2' target mode.
+        - **max_shift (Tuple[str, int]):** Maximum shift correction mode and value.
+        - **fill_mode (str):** Mode used to fill missing data after shifting ('nan', 'zero', 'adjacent').
+        - **loglvl (str):** Logging level for debugging and information.
+
+    Methods:
+        run(): Executes the Icoshift alignment process.
+            The `run` method performs the main alignment process using the following steps:
+                1. Optionally performs a global pre-alignment of the entire dataset.
+                2. Splits the signals into intervals based on the selected alignment mode.
+                3. Calculates the target signal based on the chosen target mode.
+                4. Aligns the signals within each interval to the target signal.
+                5. Reconstructs the aligned signals from the intervals.
+                
+    Example:
+        .. code-block:: python
+
+            icoshift = px.Icoshift()
+            icoshift.signals = nvz_df.values
+            icoshift.signal_names = list(nvz_df.index.values)
+            icoshift.inter = ('n_intervals', 100)
+            icoshift.target = 'median'
+            icoshift.global_pre_align = True
+            icoshift.max_shift = 'best'
+
+            icoshift.run()            
+    """    
     def __init__(self):
         self._loglvl = logging.INFO
         self._loglvl_available = {'critical': 50,
@@ -403,12 +448,15 @@ class Icoshift:
 
     def run(self):
         """
-        Main function to run the actual icoshift
-        1 - pre run coshift whole dataset?
-          - co shift / no co shift
-        2 - split into intervals
-        3 - co shift each interval
-        4 - reconstruct from intervals
+        Main function to run the actual icoshift process.
+
+        The steps involved are:
+
+        1. Pre-run coshift on the whole dataset:
+            - Co-shift or no co-shift.
+        2. Split the data into intervals.
+        3. Co-shift each interval.
+        4. Reconstruct the data from intervals.
         """
 
         next_step = True

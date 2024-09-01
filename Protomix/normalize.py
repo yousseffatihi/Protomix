@@ -5,12 +5,17 @@ def normalize(spectra_df: pd.DataFrame, method: str = 'PQN') -> pd.DataFrame:
     """
     Apply different normalization methods to a DataFrame of spectra.
 
-    Parameters:
-    - spectra_df (pd.DataFrame): The DataFrame containing the spectra with samples as rows and data points as columns.
-    - method (str): The normalization method to apply. Options: 'PQN' (default), 'TotalArea', 'SNV'.
+    This function normalizes the spectra in the provided DataFrame using the specified method. 
+    Each row in the DataFrame represents a sample, and each column corresponds to a data point in the spectrum.
 
-    Returns:
-    - pd.DataFrame: The normalized spectra.
+    :param spectra_df: The DataFrame containing the spectra, with samples as rows and data points as columns.
+    :type spectra_df: pd.DataFrame
+    :param method: The normalization method to apply. Options are 'PQN' (Probabilistic Quotient Normalization), 
+        'TotalArea' (Total Area Normalization), or 'SNV' (Standard Normal Variate). Default is 'PQN'.
+    :type method: str
+    
+    :return: The normalized spectra as a DataFrame.
+    :rtype: pd.DataFrame
     """
 
     if method == 'PQN':

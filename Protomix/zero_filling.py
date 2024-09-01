@@ -3,16 +3,23 @@ import pandas as pd
 
 def zero_filling(fid_df: pd.DataFrame, acqus_df: pd.DataFrame, target_points: int = 5000) -> pd.DataFrame:
     """
-    Zero-fill or add zeros to the end of FID signals in a DataFrame to achieve the target number of points.
+    Zero-fill FID signals in a DataFrame to achieve the target number of points.
 
-    Parameters:
-    - fid_df (pd.DataFrame): DataFrame containing FID signals in rows.
-    - target_points (int): Target number of points.
-    - acqus_df (pd.DataFrame): DataFrame containing acquisition parameters.
+    This function adds zeros to the end of each FID signal in the provided DataFrame until the specified 
+    target number of points is reached. Zero-filling is commonly used to increase the resolution of the 
+    Fourier-transformed spectra.
 
-    Returns:
-    - pd.DataFrame: DataFrame containing FID signals with zeros added to the end.
+    :param fid_df: A DataFrame containing FID signals, with each row representing an individual FID signal.
+    :type fid_df: pd.DataFrame
+    :param acqus_df: A DataFrame containing acquisition parameters relevant to the FID signals.
+    :type acqus_df: pd.DataFrame
+    :param target_points: The target number of points for each FID signal after zero-filling. Default is 5000.
+    :type target_points: int
+    
+    :return: A DataFrame with FID signals that have been zero-filled to the specified target number of points.
+    :rtype: pd.DataFrame
     """
+
     dwell_time = 1 / float(acqus_df['$SW_h'][0])
     current_points = fid_df.shape[1]
     total_points = current_points + target_points
