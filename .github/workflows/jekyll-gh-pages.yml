@@ -58,7 +58,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /home/runner/work/Protomix/docs/_build/html  # Path to the generated HTML files
+          path: /home/runner/work/Protomix/Protomix/docs/_build/html  # Path to the generated HTML files
 
   # Deployment job
   deploy:
