@@ -12,7 +12,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../protomix'))
+sys.path.insert(0, os.path.abspath('../Protomix'))
 
 # import sphinx_rtd_theme
 
