@@ -1,3 +1,15 @@
 .rst-content dl dd {
     text-align: justify !important;
 }
+
+body > div > div > div.content {
+    text-align: justify !important;
+}
+
+.toctree-wrapper.compound {
+    display: none;
+}
+
+#tutorial > div.admonition.caution {
+    text-align: left;
+}

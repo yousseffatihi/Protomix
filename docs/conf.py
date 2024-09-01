@@ -14,7 +14,14 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../protomix'))
 
-import sphinx_rtd_theme
+# import sphinx_rtd_theme
+
+from docutils import nodes
+from docutils.parsers.rst import roles
+
+def span_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    node = nodes.raw('', f'<span>{text}</span>', format='html')
+    return [node], []
 
 def setup(app):
     # app.add_js_file('custom.js')
@@ -39,6 +46,8 @@ extensions = [
     'sphinx.ext.autodoc',    # Automatically generates documentation from docstrings
     'sphinx.ext.todo',       # Support for TODO directives
     'sphinx.ext.viewcode',   # Adds links to source code in the documentation
+    'sphinx_copybutton',
+    'sphinx.ext.intersphinx',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -55,19 +64,29 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_theme_options = {
-    'collapse_navigation': False,  # This keeps the navigation expanded
-    'navigation_depth': 4,  # Adjust this based on your ToC depth
-}
+# html_theme_options = {
+#   'collapse_navigation': False,  # This keeps the navigation expanded
+#     'navigation_depth': 4,  # Adjust this based on your ToC depth
+# }
 
 add_module_names = False
 # master_doc = 'install'
+
+html_theme_options = {
+    "navigation_with_keys": True,  # Enables keyboard navigation for the sidebar
+}
+
+highlight_language = 'python'
+
+roles.register_local_role('span', span_role)
+
+pygments_style = 'sphinx'  # or another Pygments style you prefer

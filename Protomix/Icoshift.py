@@ -21,19 +21,19 @@ class Icoshift:
     alignment modes, and shift correction strategies.
 
     Properties:
-        name (str): The name of the Icoshift instance.
-        global_pre_align (bool): Flag to enable or disable global pre-alignment.
-        unit_vector (np.ndarray): Vector mapping units to sample points.
-        signal_names (List[str]): List of names corresponding to the signals.
-        input_type (str): Type of input (datapoints or units).
-        result (np.ndarray): The aligned signals after running Icoshift.
-        signals (np.ndarray): The input signals to be aligned.
-        inter (List[Tuple[Union[int, float], Union[int, float]]]): User-defined intervals for alignment.
-        target (Tuple[str, Union[np.ndarray, list]]): The target signal used for alignment.
-        avg2factor (int): Factor used in the 'average2' target mode.
-        max_shift (Tuple[str, int]): Maximum shift correction mode and value.
-        fill_mode (str): Mode used to fill missing data after shifting ('nan', 'zero', 'adjacent').
-        loglvl (str): Logging level for debugging and information.
+        - **name (str):** The name of the Icoshift instance.
+        - **global_pre_align (bool):** Flag to enable or disable global pre-alignment.
+        - **unit_vector (np.ndarray):** Vector mapping units to sample points.
+        - **signal_names (List[str]):** List of names corresponding to the signals.
+        - **input_type (str):** Type of input (datapoints or units).
+        - **result (np.ndarray):** The aligned signals after running Icoshift.
+        - **signals (np.ndarray):** The input signals to be aligned.
+        - **inter (List[Tuple[Union[int, float], Union[int, float]]]):** User-defined intervals for alignment.
+        - **target (Tuple[str, Union[np.ndarray, list]]):** The target signal used for alignment.
+        - **avg2factor (int):** Factor used in the 'average2' target mode.
+        - **max_shift (Tuple[str, int]):** Maximum shift correction mode and value.
+        - **fill_mode (str):** Mode used to fill missing data after shifting ('nan', 'zero', 'adjacent').
+        - **loglvl (str):** Logging level for debugging and information.
 
     Methods:
         run(): Executes the Icoshift alignment process.
@@ -47,11 +47,15 @@ class Icoshift:
     Example:
         .. code-block:: python
 
-            icoshift = Icoshift()
-            icoshift.signals = np.array([...])  # Assign your spectral data here
-            icoshift.run()
-            aligned_signals = icoshift.result
-            
+            icoshift = px.Icoshift()
+            icoshift.signals = nvz_df.values
+            icoshift.signal_names = list(nvz_df.index.values)
+            icoshift.inter = ('n_intervals', 100)
+            icoshift.target = 'median'
+            icoshift.global_pre_align = True
+            icoshift.max_shift = 'best'
+
+            icoshift.run()            
     """    
     def __init__(self):
         self._loglvl = logging.INFO
