@@ -40,7 +40,7 @@ jobs:
           pip install sphinx-copybutton
 
       - name: List files
-        run: ls -R
+        run: pwd
 
       - name: Build the documentation
         run: |
