@@ -39,6 +39,9 @@ jobs:
           pip install sphinx furo  # or any other theme you are using
           pip install sphinx-copybutton
 
+      - name: List files
+        run: ls -R
+
       - name: Build the documentation
         run: |
           sphinx-build -b html docs docs/_build/html
