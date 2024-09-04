@@ -5,8 +5,10 @@ sphinx:
   configuration: docs/conf.py  # Path to your Sphinx configuration file
 
 # Define the Python version and install dependencies
-python:
-  version: 3.11  # Specify the Python version
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11.7"
 
   # Install necessary dependencies for building the documentation
   install:
