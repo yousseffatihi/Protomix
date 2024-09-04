@@ -4,7 +4,7 @@
 # Required
 version: 2
 
-# Set the OS, Python version and other tools you might need
+# Set the OS, Python version, and other tools you might need
 build:
   os: ubuntu-22.04
   tools:
@@ -24,20 +24,14 @@ sphinx:
 
 # Optionally build your docs in additional formats such as PDF and ePub
 formats:
-  - sphinx
-  - furo  # Replace with the theme you're using, like 'alabaster', 'readthedocs', etc.
-  - numpy
-  - pandas
-  - scipy
-  - plotly
-  - sphinx-copybutton
+  - pdf  # If you want to generate a PDF output
+  - epub  # If you want to generate an ePub output
+  - htmlzip  # If you want to generate downloadable HTML
 
-# Optional but recommended, declare the Python requirements required
-# to build your documentation
-# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
-# python:
-#   install:
-#     - requirements: docs/requirements.txt
+# Declare the Python requirements required to build your documentation
+python:
+  install:
+    - requirements: docs/requirements.txt  # Use a requirements.txt file if available
 
 # Customize the build command (optional if you need specific steps)
 build:
