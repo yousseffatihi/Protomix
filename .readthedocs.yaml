@@ -24,3 +24,8 @@ python:
   - requirements: "docs/requirements.txt"
   - method: pip
     path: .
+
+# Customize the build command (optional if you need specific steps)
+build:
+  commands:
+    - sphinx-build -b html docs docs/_build/html
