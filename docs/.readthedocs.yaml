@@ -25,4 +25,4 @@ python:
 # Customize the build command (optional if you need specific steps)
 build:
   commands:
-    - sphinx-build -b html docs/ docs/_build/html  # Adjust paths if necessary
+    - sphinx-build -b html docs docs/_build/html  # Adjust paths if necessary
