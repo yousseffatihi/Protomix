@@ -1,28 +1,43 @@
+# Read the Docs configuration file for Sphinx projects
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
 version: 2
 
-# Build documentation using Sphinx
-sphinx:
-  configuration: docs/conf.py  # Path to your Sphinx configuration file
-
-# Define the Python version and install dependencies
+# Set the OS, Python version and other tools you might need
 build:
   os: ubuntu-22.04
   tools:
     python: "3.11.7"
+    # You can also specify other tool versions:
+    # nodejs: "20"
+    # rust: "1.70"
+    # golang: "1.20"
 
-  # Install necessary dependencies for building the documentation
-  install:
-    - requirements: docs/requirements.txt  # If you use a requirements.txt file
+# Build documentation in the "docs/" directory with Sphinx
+sphinx:
+  configuration: docs/conf.py
+  # You can configure Sphinx to use a different builder, for instance use the dirhtml builder for simpler URLs
+  # builder: "dirhtml"
+  # Fail on all warnings to avoid broken references
+  # fail_on_warning: true
 
-# Alternatively, you can define the packages directly
-  extra_requirements:
-    - sphinx
-    - furo  # Replace with the theme you're using, like 'alabaster', 'readthedocs', etc.
-    - numpy
-    - pandas
-    - scipy
-    - plotly
-    - sphinx-copybutton
+# Optionally build your docs in additional formats such as PDF and ePub
+formats:
+  - sphinx
+  - furo  # Replace with the theme you're using, like 'alabaster', 'readthedocs', etc.
+  - numpy
+  - pandas
+  - scipy
+  - plotly
+  - sphinx-copybutton
+
+# Optional but recommended, declare the Python requirements required
+# to build your documentation
+# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
+# python:
+#   install:
+#     - requirements: docs/requirements.txt
 
 # Customize the build command (optional if you need specific steps)
 build:
